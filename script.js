@@ -1,36 +1,32 @@
-// script.js
+// dashboard.js
 
-// تحقق من تسجيل الدخول
-function isLoggedIn() {
-    // هنا يجب عليك التحقق من حالة تسجيل الدخول من خلال الخادم (backend)
-    return false; // تعيين إلى true إذا كان المستخدم مسجل الدخول
-}
+async function executeCommand() {
+    const commandInput = document.getElementById('commandInput').value;
 
-// توجيه المستخدم إذا لم يكن مسجلاً الدخول
-function redirectTo(url) {
-    if (!isLoggedIn()) {
-        alert('Please login first to access this feature.');
-        window.location.href = 'index.html';
-    } else {
-        window.location.href = url;
+    // التأكد من وجود أمر قبل الإرسال
+    if (commandInput.trim() === '') {
+        alert('Please enter a command!');
+        return;
     }
+
+    // استدعاء API لـ OpenAI مع الأمر المدخل
+    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer YOUR_OPENAI_API_KEY`
+        },
+        body: JSON.stringify({
+            prompt: commandInput,
+            max_tokens: 150,
+            n: 1,
+            stop: null,
+            temperature: 0.7
+        })
+    });
+
+    const data = await response.json();
+
+    // عرض النتائج في لوحة التحكم
+    document.getElementById('commandOutput').innerText = data.choices[0].text;
 }
-
-// إعادة المستخدم إلى المكان الذي ضغط فيه بعد تسجيل الدخول
-document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        // هنا يجب عليك إضافة الشيفرة للتحقق من تسجيل الدخول
-        alert('Login successful! Redirecting back...');
-        window.location.href = 'dashboard.html'; // يجب تحديث هذا العنوان بناءً على حالتك
-    });
-
-    // إضافة تفاعلية للزر Register
-    const registerLink = document.querySelector('a[href="register.html"]');
-    registerLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        alert('Redirecting to registration page...');
-        window.location.href = 'register.html';
-    });
-});
