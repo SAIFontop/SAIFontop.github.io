@@ -1,32 +1,37 @@
-// dashboard.js
+require('dotenv').config();
+const express = require('express');
+const fetch = require('node-fetch');
 
-async function executeCommand() {
-    const commandInput = document.getElementById('commandInput').value;
+const app = express();
+app.use(express.json());
 
-    // التأكد من وجود أمر قبل الإرسال
-    if (commandInput.trim() === '') {
-        alert('Please enter a command!');
-        return;
+app.post('/execute-command', async (req, res) => {
+    const command = req.body.command;
+
+    try {
+        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                prompt: command,
+                max_tokens: 150,
+                n: 1,
+                stop: null,
+                temperature: 0.7
+            })
+        });
+
+        const data = await response.json();
+        res.json({ result: data.choices[0].text });
+    } catch (error) {
+        console.error('Error calling OpenAI API:', error);
+        res.status(500).send('Internal Server Error');
     }
+});
 
-    // استدعاء API لـ OpenAI مع الأمر المدخل
-    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer YOUR_OPENAI_API_KEY`
-        },
-        body: JSON.stringify({
-            prompt: commandInput,
-            max_tokens: 150,
-            n: 1,
-            stop: null,
-            temperature: 0.7
-        })
-    });
-
-    const data = await response.json();
-
-    // عرض النتائج في لوحة التحكم
-    document.getElementById('commandOutput').innerText = data.choices[0].text;
-}
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});
