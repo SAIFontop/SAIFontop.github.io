@@ -1,87 +1,72 @@
 /* style.css */
+
+/* إعداد الخلفية المتحركة */
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: #1a1a1d;
-    font-family: 'Roboto', sans-serif;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    overflow: hidden;
     margin: 0;
+    padding: 0;
 }
 
-.login-container {
-    text-align: center;
-    background-color: #333;
-    padding: 30px;
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    animation: gradient 10s ease infinite;
+    z-index: -1;
+}
+
+/* تأثير الخلفية المتحركة */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 350px;
 }
 
 .logo {
     width: 100px;
-    margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    font-size: 1em;
-}
-
-.btn {
+.btn-discord {
+    background-color: #7289DA;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    font-size: 1em;
 }
 
-.login-btn {
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
-.login-btn:hover {
-    background-color: #0056b3;
-}
-
-.discord-btn {
-    background-color: #7289DA;
-    color: #fff;
-    margin-top: 10px;
-}
-
-.google-btn {
+.btn-google {
     background-color: #DB4437;
-    color: #fff;
-    margin-top: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
     margin-right: 8px;
 }
 
 a {
-    display: block;
-    margin-top: 15px;
     color: #fff;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
 a:hover {
