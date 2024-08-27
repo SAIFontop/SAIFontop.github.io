@@ -6,39 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - 911 Family</title>
+
+    <!-- رابط Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- رابط Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- رابط الخطوط من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- رابط ملف CSS مخصص -->
     <link rel="stylesheet" href="style.css">
-    <!-- رابط خط جوجل -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="login-container">
-        <!-- شعار متحرك -->
-        <img src="/mnt/data/512.gif" alt="911 Family Logo" class="logo">
 
-        <h1>Login to 911 Family</h1>
+    <!-- خلفية متحركة -->
+    <div class="background"></div>
 
-        <!-- نموذج تسجيل الدخول -->
-        <form id="loginForm" action="/auth/login" method="POST">
-            <input type="text" name="username" placeholder="Username or Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" class="btn login-btn">Login</button>
-        </form>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-4 text-center animate__animated animate__fadeInUp">
 
-        <!-- أزرار تسجيل الدخول عبر المنصات -->
-        <div class="social-login">
-            <button onclick="redirectTo('/auth/discord')" class="btn discord-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord Logo"> Login with Discord
-            </button>
-            <button onclick="redirectTo('/auth/google')" class="btn google-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo"> Login with Google
-            </button>
+            <!-- شعار متحرك -->
+            <img src="/mnt/data/512.gif" alt="911 Family Logo" class="logo mb-3 animate__animated animate__pulse animate__infinite">
+
+            <h1 class="mb-4">Login to 911 Family</h1>
+
+            <!-- نموذج تسجيل الدخول -->
+            <form id="loginForm" class="mb-3">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Username or Email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+            </form>
+
+            <!-- أزرار تسجيل الدخول عبر المنصات -->
+            <div class="d-grid gap-2">
+                <button onclick="redirectTo('/auth/discord')" class="btn btn-discord btn-lg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord Logo"> Login with Discord
+                </button>
+                <button onclick="redirectTo('/auth/google')" class="btn btn-google btn-lg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo"> Login with Google
+                </button>
+            </div>
+
+            <div class="mt-4">
+                <a href="forgot-password.html" class="text-white">Forgot Password?</a> | 
+                <a href="register.html" class="text-white">Register</a>
+            </div>
+
         </div>
-
-        <a href="forgot-password.html">Forgot Password?</a>
-        <a href="register.html">Register</a>
     </div>
 
+    <!-- مكتبة Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ملف JavaScript مخصص -->
     <script src="script.js"></script>
 </body>
 
