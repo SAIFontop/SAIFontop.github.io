@@ -1,74 +1,53 @@
-/* style.css */
-
-/* إعداد الخلفية المتحركة */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #1a1a1d;
-    color: #fff;
-    overflow: hidden;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #3498db, #8e44ad);
-    animation: gradient 10s ease infinite;
-    z-index: -1;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-/* تأثير الخلفية المتحركة */
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.card {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 350px;
-}
-
-.logo {
-    width: 100px;
-}
-
-.btn-discord {
-    background-color: #7289DA;
-    color: white;
+nav ul {
+    list-style: none;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.btn-google {
-    background-color: #DB4437;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+nav ul li {
+    margin: 0 15px;
 }
 
-.btn img {
-    width: 25px;
-    margin-right: 8px;
-}
-
-a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
