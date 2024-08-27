@@ -1,34 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911bot - Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>911bot - بوت دسكورد لإدارة الطوارئ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff3333, #0066cc);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .button {
+            background-color: #ff3333;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #e62e2e;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+        }
+
+        .feature {
+            flex: 0 0 300px;
+            background-color: #2e2e2e;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/auth/discord">Login with Discord</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <h1>Welcome to 911bot</h1>
-            <p>Your gateway to the 911 Family Discord server.</p>
-            <a href="/auth/discord" class="btn-primary">Login with Discord</a>
-        </section>
-    </main>
+    <div class="navbar">
+        <div><a href="#">الرئيسية</a></div>
+        <div>
+            <a href="#">الميزات</a>
+            <a href="#">التسعير</a>
+            <a href="#">التوصيات</a>
+            <a href="#">الدعم</a>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 911bot. All rights reserved.</p>
-    </footer>
+    <div class="header">
+        <h1>911bot</h1>
+        <p>بوتك الأفضل لإدارة الطوارئ على دسكورد</p>
+        <a href="#" class="button">ابدأ الآن</a>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h2>تنبيهات في الوقت الحقيقي</h2>
+            <p>تلقي إشعارات فورية للحوادث والمواقف الطارئة.</p>
+        </div>
+        <div class="feature">
+            <h2>أوامر مخصصة</h2>
+            <p>أنشئ أوامر مخصصة لتلبية احتياجات مجتمعك.</p>
+        </div>
+        <div class="feature">
+            <h2>تقارير الحوادث</h2>
+            <p>إعداد تقارير تفصيلية عن الحوادث وإرسالها للفريق.</p>
+        </div>
+        <div class="feature">
+            <h2>دعم المجتمع</h2>
+            <p>تفاعل مع مستخدمين آخرين وتعلم من خبراتهم.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 911bot. جميع الحقوق محفوظة.</p>
+        <a href="#">اتصل بنا</a> | <a href="#">سياسة الخصوصية</a> | <a href="#">شروط الخدمة</a>
+    </div>
+
 </body>
 </html>
