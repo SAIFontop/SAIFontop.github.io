@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - 911 Family AI Control</title>
-
-    <!-- رابط Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- رابط ملف CSS مخصص -->
-    <link rel="stylesheet" href="style.css">
+    <title>911bot - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/auth/discord">Login with Discord</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container mt-5">
-        <h1 class="text-center">Admin Dashboard - AI Control</h1>
+    <main>
+        <section class="hero">
+            <h1>Welcome to 911bot</h1>
+            <p>Your gateway to the 911 Family Discord server.</p>
+            <a href="/auth/discord" class="btn-primary">Login with Discord</a>
+        </section>
+    </main>
 
-        <div class="card mt-4">
-            <div class="card-body">
-                <textarea id="commandInput" class="form-control mb-3" rows="5" placeholder="Enter your command..."></textarea>
-                <button class="btn btn-primary" onclick="executeCommand()">Execute Command</button>
-            </div>
-        </div>
-
-        <div class="mt-4">
-            <h3>Command Output:</h3>
-            <pre id="commandOutput" class="p-3 bg-light"></pre>
-        </div>
-    </div>
-
-    <!-- مكتبة Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- ملف JavaScript مخصص -->
-    <script src="dashboard.js"></script>
+    <footer>
+        <p>&copy; 2024 911bot. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
