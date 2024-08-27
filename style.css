@@ -1,26 +1,81 @@
-/* تنسيق الصفحة */
+/* style.css */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #1a1a1d;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
-/* تنسيق شريط التنقل */
-.navbar {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.login-container {
+    text-align: center;
+    background-color: #282828;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
 }
 
-/* تنسيق القسم الرئيسي */
-.jumbotron {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
 }
 
-/* أزرار إضافية */
-.btn-primary {
-    background-color: #007bff;
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
     border: none;
+    outline: none;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.discord-btn {
+    background-color: #7289DA;
+    color: #fff;
+}
+
+.google-btn {
+    background-color: #DB4437;
+    color: #fff;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+a {
+    display: block;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a:hover {
+    text-decoration: underline;
 }
