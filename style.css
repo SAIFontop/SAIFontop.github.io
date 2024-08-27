@@ -12,11 +12,11 @@ body {
 
 .login-container {
     text-align: center;
-    background-color: #282828;
+    background-color: #333;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 350px;
 }
 
 .logo {
@@ -32,6 +32,7 @@ input[type="password"] {
     border-radius: 5px;
     border: none;
     outline: none;
+    font-size: 1em;
 }
 
 .btn {
@@ -50,16 +51,23 @@ input[type="password"] {
 .login-btn {
     background-color: #007bff;
     color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
 }
 
 .discord-btn {
     background-color: #7289DA;
     color: #fff;
+    margin-top: 10px;
 }
 
 .google-btn {
     background-color: #DB4437;
     color: #fff;
+    margin-top: 10px;
 }
 
 .btn img {
