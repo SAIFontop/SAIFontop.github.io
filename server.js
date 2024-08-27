@@ -1,37 +1,69 @@
-require('dotenv').config();
 const express = require('express');
-const fetch = require('node-fetch');
+const session = require('express-session');
+const passport = require('passport');
+const DiscordStrategy = require('passport-discord').Strategy;
 
 const app = express();
-app.use(express.json());
 
-app.post('/execute-command', async (req, res) => {
-    const command = req.body.command;
+// Configure session management
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false,
+}));
 
-    try {
-        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-            },
-            body: JSON.stringify({
-                prompt: command,
-                max_tokens: 150,
-                n: 1,
-                stop: null,
-                temperature: 0.7
-            })
-        });
+// Initialize Passport for authentication
+app.use(passport.initialize());
+app.use(passport.session());
 
-        const data = await response.json();
-        res.json({ result: data.choices[0].text });
-    } catch (error) {
-        console.error('Error calling OpenAI API:', error);
-        res.status(500).send('Internal Server Error');
+// Set up the Discord strategy for Passport
+passport.use(new DiscordStrategy({
+  clientID: 'YOUR_CLIENT_ID',  // Replace with your Discord Client ID
+  clientSecret: 'YOUR_CLIENT_SECRET',  // Replace with your Discord Client Secret
+  callbackURL: 'http://localhost:3000/auth/discord/callback',  // Replace with your callback URL
+  scope: ['identify', 'email']
+}, (accessToken, refreshToken, profile, done) => {
+  // Here you can save the profile info to the database if needed
+  return done(null, profile);
+}));
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
+// Routes
+app.get('/auth/discord', passport.authenticate('discord'));
+
+app.get('/auth/discord/callback', passport.authenticate('discord', {
+  failureRedirect: '/'
+}), (req, res) => {
+  res.redirect('/dashboard');
+});
+
+app.get('/logout', (req, res) => {
+  req.logout(err => {
+    if (err) {
+      return next(err);
     }
+    res.redirect('/');
+  });
+});
+
+app.get('/dashboard', (req, res) => {
+  if (!req.isAuthenticated()) {
+    return res.redirect('/');
+  }
+  res.send(`Hello ${req.user.username}, welcome to your dashboard!`);
+});
+
+app.get('/', (req, res) => {
+  res.send('Welcome to 911bot! <a href="/auth/discord">Login with Discord</a>');
 });
 
 app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+  console.log('Server is running on http://localhost:3000');
 });
