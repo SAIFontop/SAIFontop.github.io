@@ -25,4 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Login successful! Redirecting back...');
         window.location.href = 'dashboard.html'; // يجب تحديث هذا العنوان بناءً على حالتك
     });
+
+    // إضافة تفاعلية للزر Register
+    const registerLink = document.querySelector('a[href="register.html"]');
+    registerLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        alert('Redirecting to registration page...');
+        window.location.href = 'register.html';
+    });
 });
