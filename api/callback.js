@@ -18,18 +18,27 @@ module.exports = async (req, res) => {
     };
 
     try {
+        // طلب التوكن من Discord باستخدام Authorization Code
         const response = await axios.post('https://discord.com/api/oauth2/token', new URLSearchParams(data), {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         });
 
+        // التحقق من وجود التوكن في الاستجابة
+        if (!response.data.access_token) {
+            console.error('No access token in response:', response.data);
+            return res.status(400).send('Invalid authorization code.');
+        }
+
+        // طلب معلومات المستخدم من Discord باستخدام Access Token
         const userInfo = await axios.get('https://discord.com/api/users/@me', {
             headers: {
                 'Authorization': `Bearer ${response.data.access_token}`
             }
         });
 
+        // إنشاء JWT للتخزين في الكوكيز
         const token = jwt.sign(userInfo.data, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.setHeader('Set-Cookie', cookie.serialize('token', token, {
             httpOnly: true,
