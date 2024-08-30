@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم في بوت ديسكورد</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>لوحة التحكم في بوت ديسكورد</h1>
+        <form id="sendMessageForm" class="form">
+            <div class="input-container">
+                <input type="text" id="channelId" placeholder="معرف القناة" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message" placeholder="الرسالة" required>
+            </div>
+            <button type="submit" class="btn">إرسال</button>
+        </form>
+        <a href="/logout" class="btn logout">تسجيل الخروج</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
