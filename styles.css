@@ -1,146 +1,28 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحكم في بوت ديسكورد</title>
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>لوحة التحكم في بوت ديسكورد</h1>
+        <form id="sendMessageForm" class="form">
+            <div class="input-container">
+                <input type="text" id="channelId" placeholder="معرف القناة" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message" placeholder="الرسالة" required>
+            </div>
+            <button type="submit" class="btn">إرسال</button>
+        </form>
+    </div>
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0A0A0A;
-    color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1F1F1F;
-}
-
-.navbar ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar ul li a:hover {
-    color: #FF5733;
-}
-
-.banner {
-    text-align: center;
-    padding: 100px 20px;
-    background-image: url('banner-image.jpg'); /* تأكد من وجود الصورة بنفس الاسم */
-    background-size: cover;
-    background-position: center;
-}
-
-.banner h1 {
-    font-size: 3em;
-    color: #FF5733;
-}
-
-.banner p {
-    font-size: 1.5em;
-    color: #FFFFFF;
-}
-
-.main-content {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.main-content h2 {
-    font-size: 2em;
-    color: #FF5733;
-}
-
-.main-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.discord-link {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #5865F2;
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.login-section {
-    padding: 50px 20px;
-    background-color: #1F1F1F;
-    text-align: center;
-}
-
-.login-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #FF5733;
-}
-
-.login-section form {
-    display: inline-block;
-}
-
-.login-section input {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 5px;
-    border: none;
-}
-
-.login-section button {
-    padding: 10px 20px;
-    background-color: #FF5733;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.login-section button:hover {
-    background-color: #e74c3c;
-}
-
-.footer {
-    background-color: #1F1F1F;
-    padding: 20px;
-    text-align: center;
-    color: #FFFFFF;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer a {
-    color: #FFFFFF;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer a:hover {
-    color: #FF5733;
-}
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
