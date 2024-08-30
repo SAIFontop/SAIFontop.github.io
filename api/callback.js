@@ -4,11 +4,12 @@ const cookie = require('cookie');
 
 module.exports = async (req, res) => {
     const code = req.query.code;
+
     const data = {
         client_id: process.env.DISCORD_CLIENT_ID,
         client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: 'authorization_code',
-        redirect_uri: `https://sai-fontop-github-io.vercel.app/api/callback`, // استبدل YOUR_VERCEL_APP_URL بالرابط الفعلي لتطبيق Vercel الخاص بك
+        redirect_uri: `https://sai-fontop-github-io.vercel.app/api/callback`, // تأكد من أن هذا هو الرابط الصحيح
         code
     };
 
