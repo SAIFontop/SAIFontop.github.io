@@ -1,15 +1,22 @@
-// وظيفة التحكم في نموذج تسجيل الدخول
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // منع التحديث الافتراضي للصفحة
+document.getElementById('sendMessageForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    // جلب قيم اسم المستخدم وكلمة المرور
-    const username = event.target[0].value;
-    const password = event.target[1].value;
+    const channelId = document.getElementById('channelId').value;
+    const message = document.getElementById('message').value;
 
-    // التحقق من صحة بيانات تسجيل الدخول
-    if (username === 'admin' && password === 'password') {
-        alert('تم تسجيل الدخول بنجاح!');
-    } else {
-        alert('اسم المستخدم أو كلمة المرور غير صحيحة.');
+    try {
+        const response = await fetch('http://localhost:3000/api/send-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ channelId, message })
+        });
+
+        const result = await response.json();
+        alert(result.status || result.error);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('حدث خطأ أثناء إرسال الرسالة');
     }
 });
