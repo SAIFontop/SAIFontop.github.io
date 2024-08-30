@@ -2,56 +2,143 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911bot.org - منصة الروبوتات المثالية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- رابط ملف CSS الخارجي -->
+    <title>911 Family</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1F1F1F;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul li a:hover {
+            color: #FF5733;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('banner-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            color: #FF5733;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+            color: #FFFFFF;
+        }
+
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .main-content h2 {
+            font-size: 2em;
+            color: #FF5733;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .discord-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #5865F2;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #1F1F1F;
+            padding: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #FF5733;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="logo.png" alt="شعار 911 Family"> <!-- استبدلها بشعار موقعك -->
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>911 Family</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#join">Join Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#features">المميزات</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h1>مرحبًا بكم في 911bot.org</h1>
-            <p>منصتك المثالية للروبوتات</p>
-            <a href="#get-started" class="cta-button">ابدأ الآن</a>
-        </div>
+    <section class="banner" id="home">
+        <h1>Welcome to 911 Family</h1>
+        <p>The Ultimate Discord Community</p>
     </section>
 
-    <section class="features" id="features">
-        <div class="container">
-            <div class="feature">
-                <h3>روبوتات قوية</h3>
-                <p>قم بأتمتة مهامك مع إمكانيات الروبوت المتقدمة لدينا.</p>
-            </div>
-            <div class="feature">
-                <h3>تكامل سلس</h3>
-                <p>تكامل بسهولة مع أنظمتك ومنصاتك الحالية.</p>
-            </div>
-            <div class="feature">
-                <h3>دعم على مدار الساعة</h3>
-                <p>نحن هنا لمساعدتك على مدار الساعة طوال أيام الأسبوع.</p>
-            </div>
-        </div>
+    <section class="main-content">
+        <h2>Join us for exclusive events, engaging discussions, and a vibrant community experience.</h2>
+        <p>Connect with fellow gamers, participate in community events, and make new friends in a welcoming and inclusive environment.</p>
+        <a href="https://discord.gg/yourlinkhere" class="discord-link">Join Our Discord</a>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 911bot.org. جميع الحقوق محفوظة.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2024 911 Family. All rights reserved.</p>
+        <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a>
     </footer>
+
 </body>
 </html>
