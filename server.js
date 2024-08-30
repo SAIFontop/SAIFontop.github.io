@@ -27,7 +27,7 @@ app.use(passport.session());
 passport.use(new DiscordStrategy({
     clientID: process.env.DISCORD_CLIENT_ID,
     clientSecret: process.env.DISCORD_CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/auth/discord/callback',
+    callbackURL: 'https://your-heroku-or-vercel-app-url.com/auth/discord/callback',
     scope: ['identify']
 }, (accessToken, refreshToken, profile, done) => {
     process.nextTick(() => done(null, profile));
@@ -39,9 +39,9 @@ passport.deserializeUser((obj, done) => done(null, obj));
 // المسارات
 app.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-        res.sendFile(__dirname + '/dashboard.html'); // لوحة التحكم بعد تسجيل الدخول
+        res.json({ message: 'Logged in', user: req.user });
     } else {
-        res.sendFile(__dirname + '/index.html'); // صفحة البداية قبل تسجيل الدخول
+        res.json({ message: 'Not logged in' });
     }
 });
 
