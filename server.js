@@ -1,22 +1,64 @@
-document.getElementById('sendMessageForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
+require('dotenv').config();
+const express = require('express');
+const session = require('express-session');
+const passport = require('passport');
+const DiscordStrategy = require('passport-discord').Strategy;
+const { Client, GatewayIntentBits } = require('discord.js');
 
-    const channelId = document.getElementById('channelId').value;
-    const message = document.getElementById('message').value;
+// إعداد Express
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-    try {
-        const response = await fetch('http://localhost:3000/api/send-message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ channelId, message })
-        });
+// إعداد Discord.js للبوت
+const bot = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+bot.login(process.env.DISCORD_BOT_TOKEN);
 
-        const result = await response.json();
-        alert(result.status || result.error);
-    } catch (error) {
-        console.error('Error:', error);
-        alert('حدث خطأ أثناء إرسال الرسالة');
+// إعداد الجلسات
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// إعداد Discord OAuth2
+passport.use(new DiscordStrategy({
+    clientID: process.env.DISCORD_CLIENT_ID,
+    clientSecret: process.env.DISCORD_CLIENT_SECRET,
+    callbackURL: 'http://localhost:3000/auth/discord/callback',
+    scope: ['identify']
+}, (accessToken, refreshToken, profile, done) => {
+    process.nextTick(() => done(null, profile));
+}));
+
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((obj, done) => done(null, obj));
+
+// المسارات
+app.get('/', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.sendFile(__dirname + '/dashboard.html'); // لوحة التحكم بعد تسجيل الدخول
+    } else {
+        res.sendFile(__dirname + '/index.html'); // صفحة البداية قبل تسجيل الدخول
     }
 });
+
+// مسار تسجيل الدخول
+app.get('/auth/discord', passport.authenticate('discord'));
+
+// مسار العودة من تسجيل الدخول
+app.get('/auth/discord/callback', passport.authenticate('discord', { failureRedirect: '/' }), (req, res) => {
+    res.redirect('/');
+});
+
+// مسار تسجيل الخروج
+app.get('/logout', (req, res) => {
+    req.logout(() => {
+        res.redirect('/');
+    });
+});
+
+// بدء خادم Express
+app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
