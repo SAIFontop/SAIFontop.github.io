@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Discord bot control using Vercel Serverless Functions",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
     "axios": "^0.27.2",
     "jsonwebtoken": "^8.5.1",
