@@ -5,6 +5,10 @@ const cookie = require('cookie');
 module.exports = async (req, res) => {
     const code = req.query.code;
 
+    if (!code) {
+        return res.status(400).send('Authorization code is missing.');
+    }
+
     const data = {
         client_id: process.env.DISCORD_CLIENT_ID,
         client_secret: process.env.DISCORD_CLIENT_SECRET,
