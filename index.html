@@ -4,57 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911 Family</title>
+    <title>تحكم في بوت ديسكورد</title>
     <!-- ربط ملف CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- شريط التنقل -->
-    <header class="navbar">
-        <div class="logo">
-            <h1>911 Family</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#events">الفعاليات</a></li>
-                <li><a href="#community">المجتمع</a></li>
-                <li><a href="#join">انضم إلينا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-                <li><a href="#login">تسجيل الدخول</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- قسم البانر -->
-    <section class="banner" id="home">
-        <h1>أهلاً بكم في 911 Family</h1>
-        <p>المجتمع الأمثل على دسكورد</p>
-    </section>
-
-    <!-- محتوى الموقع -->
-    <section class="main-content" id="about">
-        <h2>انضم إلينا للاستمتاع بفعاليات حصرية، ومناقشات مشوقة، وتجربة مجتمع نابضة بالحياة.</h2>
-        <p>تواصل مع لاعبين آخرين، شارك في الفعاليات المجتمعية، وكوّن صداقات جديدة في بيئة ترحيبية وشاملة.</p>
-        <a href="https://discord.gg/c91" class="discord-link">انضم إلى دسكورد</a>
-    </section>
-
-    <!-- نموذج تسجيل الدخول -->
-    <section class="login-section" id="login">
-        <h2>تسجيل الدخول</h2>
-        <form id="loginForm">
-            <input type="text" placeholder="اسم المستخدم" required>
-            <input type="password" placeholder="كلمة المرور" required>
-            <button type="submit">تسجيل الدخول</button>
+    <div class="container">
+        <h1>لوحة التحكم في بوت ديسكورد</h1>
+        <form id="sendMessageForm" class="form">
+            <div class="input-container">
+                <input type="text" id="channelId" placeholder="معرف القناة" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message" placeholder="الرسالة" required>
+            </div>
+            <button type="submit" class="btn">إرسال</button>
         </form>
-    </section>
-
-    <!-- الفوتر -->
-    <footer class="footer">
-        <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
-        <a href="#privacy-policy">سياسة الخصوصية</a> | <a href="#terms-of-service">شروط الخدمة</a>
-    </footer>
+    </div>
 
     <!-- ربط ملف JavaScript -->
     <script src="script.js"></script>
