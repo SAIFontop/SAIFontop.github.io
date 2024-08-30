@@ -13,6 +13,7 @@ module.exports = (req, res) => {
         const user = jwt.verify(token, process.env.JWT_SECRET);
         res.json({ loggedIn: true, user });
     } catch (error) {
+        console.error('Error verifying token:', error);
         res.json({ loggedIn: false });
     }
 };
