@@ -45,7 +45,7 @@ body {
 .banner {
     text-align: center;
     padding: 100px 20px;
-    background-image: url('banner-image.gif'); /* تأكد من وجود الصورة بنفس الاسم */
+    background-image: url('banner-image.jpg'); /* تأكد من وجود الصورة بنفس الاسم */
     background-size: cover;
     background-position: center;
 }
