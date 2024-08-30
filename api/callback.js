@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
 
         res.redirect('/');
     } catch (error) {
-        console.error(error);
+        console.error('Error during authentication:', error.message, error.response ? error.response.data : error);
         res.status(500).send('Error during authentication');
     }
 };
