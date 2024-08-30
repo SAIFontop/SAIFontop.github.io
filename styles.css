@@ -73,9 +73,17 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .btn:hover {
     background-color: #e64a19;
     transform: translateY(-2px);
+}
+
+.logout {
+    background-color: #e64a19;
+    margin-top: 20px;
 }
