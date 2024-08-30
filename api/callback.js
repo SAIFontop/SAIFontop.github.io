@@ -7,8 +7,7 @@ module.exports = async (req, res) => {
     const data = {
         client_id: process.env.DISCORD_CLIENT_ID,
         client_secret: process.env.DISCORD_CLIENT_SECRET,
-        grant_type: 'authorization_code',
-        redirect_uri: `https://sai-fontop-github-io.vercel.app/api/callback`, // استبدل YOUR_VERCEL_APP_URL بالرابط الفعلي لتطبيق Vercel الخاص بك
+        grant_type: 'auhttps://sai-fontop-github-io.vercel.app/api/callback`, // استبدل YOUR_VERCEL_APP_URL بالرابط الفعلي لتطبيق Vercel الخاص بك
         code
     };
 
@@ -34,7 +33,7 @@ module.exports = async (req, res) => {
 
         res.redirect('/');
     } catch (error) {
-        console.error('Error during authentication:', error.message, error.response ? error.response.data : error);
+        console.error('Error during authentication:', error.message, error.response ? error.response.data : 'No additional data');
         res.status(500).send('Error during authentication');
     }
 };
