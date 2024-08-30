@@ -33,37 +33,6 @@ h1 {
     color: #ff5733;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.input-container {
-    position: relative;
-}
-
-.input-container input {
-    width: 100%;
-    padding: 15px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-}
-
-.input-container input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.input-container input:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 8px rgba(255, 87, 51, 0.2);
-}
-
 .btn {
     padding: 15px;
     background-color: #ff5733;
@@ -81,9 +50,4 @@ h1 {
 .btn:hover {
     background-color: #e64a19;
     transform: translateY(-2px);
-}
-
-.logout {
-    background-color: #e64a19;
-    margin-top: 20px;
 }
