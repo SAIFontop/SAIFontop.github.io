@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         client_id: process.env.DISCORD_CLIENT_ID,
         client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: 'authorization_code',
-        redirect_uri: `https://YOUR_VERCEL_APP_URL/api/callback`, // استبدل YOUR_VERCEL_APP_URL برابط تطبيق Vercel الخاص بك
+        redirect_uri: `https://sai-fontop-github-io.vercel.app/api/callback`, // استبدل YOUR_VERCEL_APP_URL برابط تطبيق Vercel الخاص بك
         code
     };
 
