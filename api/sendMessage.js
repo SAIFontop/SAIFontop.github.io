@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const jwt = require('jsonwebtoken');
 const cookie = require('cookie');
 
+// إنشاء بوت Discord
 const bot = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 bot.login(process.env.DISCORD_BOT_TOKEN);
 
@@ -26,7 +27,7 @@ module.exports = async (req, res) => {
             res.status(404).send('Channel not found');
         }
     } catch (error) {
-        console.error(error);
+        console.error('Error sending message:', error);
         res.status(500).send('Error sending message');
     }
 };
