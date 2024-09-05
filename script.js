@@ -1,3 +1,6 @@
+const ipApiKey = "91cd8f313e5a8c"; // مفتاح API لمعلومات IP
+const emailApiKey = "YOUR_EMAILREP_API_KEY"; // استبدل بمفتاح API لخدمة EmailRep.io
+
 function showAlert() {
     alert("Thank you for your interest in 911 Family! Stay tuned for more updates.");
 }
@@ -15,7 +18,7 @@ function showSection(sectionId) {
 
 function getIpInfo() {
     const ip = document.getElementById("ipInput").value;
-    fetch(`https://ipinfo.io/${ip}?token=YOUR_API_KEY`)
+    fetch(`https://ipinfo.io/${ip}?token=${ipApiKey}`) // استخدام مفتاح API لـ ipinfo.io
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error fetching IP info.");
@@ -38,7 +41,7 @@ function getIpInfo() {
 
 function getEmailInfo() {
     const email = document.getElementById("emailInput").value;
-    fetch(`https://emailrep.io/${email}?key=91cd8f313e5a8c`)
+    fetch(`https://emailrep.io/${email}?key=${emailApiKey}`) // استخدام مفتاح API لـ EmailRep.io
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error fetching email info.");
