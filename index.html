@@ -9,10 +9,10 @@
 <body>
     <div class="nav">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about" onclick="showAbout()">About</a></li>
-            <li><a href="#ip-info" onclick="showIpInfo()">IP Info</a></li>
-            <li><a href="#email-info" onclick="showEmailInfo()">Email Info</a></li>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#ip-info" onclick="showSection('ip-info')">IP Info</a></li>
+            <li><a href="#email-info" onclick="showSection('email-info')">Email Info</a></li>
         </ul>
     </div>
 
@@ -31,10 +31,11 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque eleifend arcu, et tincidunt ex venenatis nec.</p>
         </div>
 
-        <button class="button" onclick="showAlert()">Learn More</button>
+        <button class="button" onclick="showSection('ip-info')">Show IP Info</button>
+        <button class="button" onclick="showSection('email-info')">Show Email Info</button>
     </div>
 
-    <!-- قسم "About" مخفي في البداية -->
+    <!-- قسم "About" يبقى كما هو -->
     <div class="about-section" id="about" style="display: none;">
         <div class="about-container">
             <h2>About Us</h2>
