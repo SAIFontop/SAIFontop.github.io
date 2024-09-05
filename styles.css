@@ -1,9 +1,9 @@
-/* تحديث الأنماط لتتناسب مع ألوان الشعار الجديد */
+/* تحديث الأنماط لتناسب الألوان الجديدة */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #101010;
-    color: #e5e5e5;
+    background-color: #101010; /* خلفية سوداء */
+    color: #e5e5e5; /* لون النص الرئيسي */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -24,7 +24,7 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* تأثيرات ظل باللون الأحمر */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -36,7 +36,7 @@ body {
 .header {
     font-size: 48px;
     margin: 20px 0;
-    color: #ffcc00;
+    color: #00ff00; /* لون أخضر فاتح */
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
@@ -44,28 +44,11 @@ body {
 .subtext {
     font-size: 20px;
     margin-bottom: 40px;
-    color: #ffffff;
-}
-
-.section {
-    margin: 40px 0;
-}
-
-.section h2, .about-section h2, .ip-info-section h2, .email-info-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ffcc00;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-.section p, .about-section p, .ip-info-section p, .email-info-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #e5e5e5;
+    color: #ffffff; /* لون أبيض */
 }
 
 .nav {
-    background-color: #202020;
+    background-color: #202020; /* شريط تنقل باللون الأسود */
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -89,7 +72,7 @@ body {
 
 .nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff; /* لون النص في شريط التنقل */
     font-size: 18px;
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -97,13 +80,13 @@ body {
 }
 
 .nav ul li a:hover {
-    border: 2px solid #ffcc00;
+    border: 2px solid #ff0000; /* تأثير باللون الأحمر */
     border-radius: 5px;
 }
 
 .button {
-    background-color: #ffcc00;
-    color: #111;
+    background-color: #ff0000; /* لون الأزرار أحمر */
+    color: #ffffff; /* لون النص أبيض */
     padding: 15px 30px;
     font-size: 18px;
     border: none;
@@ -114,7 +97,7 @@ body {
 }
 
 .button:hover {
-    background-color: #ffffff;
+    background-color: #00ff00; /* عند التمرير فوق الزر يصبح اللون أخضر فاتح */
     color: #111;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
@@ -122,9 +105,9 @@ body {
 
 .discord-link {
     font-size: 20px;
-    color: #ffcc00;
+    color: #ff0000; /* لون رابط الديسكورد أحمر */
     text-decoration: none;
-    border-bottom: 2px solid #ffcc00;
+    border-bottom: 2px solid #ff0000;
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom-color 0.3s ease;
     display: inline-block;
@@ -132,16 +115,16 @@ body {
 }
 
 .discord-link:hover {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
+    color: #00ff00; /* عند التمرير فوق الرابط يصبح اللون أخضر فاتح */
+    border-bottom-color: #00ff00;
 }
 
 .footer {
-    background-color: #202020;
+    background-color: #202020; /* لون الفوتر أسود */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
@@ -152,7 +135,7 @@ input[type="text"] {
     width: 80%;
     max-width: 400px;
     margin-bottom: 20px;
-    border: 1px solid #ffcc00;
+    border: 1px solid #ff0000; /* حواف حقل الإدخال باللون الأحمر */
     border-radius: 5px;
     color: #111;
 }
@@ -160,6 +143,10 @@ input[type="text"] {
 #ipResult, #emailResult {
     margin-top: 20px;
     color: #e5e5e5;
+    background-color: #181818; /* خلفية النتائج */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
