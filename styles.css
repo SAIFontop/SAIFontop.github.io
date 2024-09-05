@@ -1,4 +1,4 @@
-/* نمط أساسي لصفحة ويب متطورة وحديثة */
+/* أنماط جديدة للأقسام المضافة */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+.container, .about-section, .ip-info-section, .email-info-section {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -50,14 +50,14 @@ body {
     margin: 40px 0;
 }
 
-.section h2 {
+.section h2, .about-section h2, .ip-info-section h2, .email-info-section h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #e5c100;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.section p {
+.section p, .about-section p, .ip-info-section p, .email-info-section p {
     font-size: 18px;
     line-height: 1.6;
     color: #ccc;
@@ -118,38 +118,6 @@ body {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
-.about-section {
-    background-color: #333;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-    margin-top: 30px;
-    border-top: 5px solid #e5c100;
-    border-bottom: 5px solid #e5c100;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.about-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #e5c100;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.about-section p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #ddd;
-}
-
 .discord-link {
     font-size: 20px;
     color: #e5c100;
@@ -184,4 +152,19 @@ body {
 @keyframes slideIn {
     from { transform: translateY(-100%); }
     to { transform: translateY(0); }
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 1px solid #e5c100;
+    border-radius: 5px;
+}
+
+#ipResult, #emailResult {
+    margin-top: 20px;
+    color: #fff;
 }
