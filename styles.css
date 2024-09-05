@@ -119,22 +119,35 @@ body {
 }
 
 .about-section {
-    background-color: #222;
+    background-color: #333;
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
     margin-top: 30px;
+    border-top: 5px solid #e5c100;
+    border-bottom: 5px solid #e5c100;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .about-section h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #e5c100;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .about-section p {
     font-size: 18px;
+    line-height: 1.8;
     margin-bottom: 20px;
+    color: #ddd;
 }
 
 .discord-link {
@@ -144,6 +157,8 @@ body {
     border-bottom: 2px solid #e5c100;
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .discord-link:hover {
