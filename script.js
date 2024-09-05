@@ -2,15 +2,25 @@ function showAlert() {
     alert("Thank you for your interest in 911 Family! Stay tuned for more updates.");
 }
 
-function showSection(sectionId) {
-    // إخفاء كل الأقسام
-    document.getElementById("home").style.display = "none";
-    document.getElementById("about").style.display = "none";
+function showAbout() {
+    document.getElementById("about").style.display = "block";
     document.getElementById("ip-info").style.display = "none";
     document.getElementById("email-info").style.display = "none";
+    window.location.href = "#about";
+}
 
-    // إظهار القسم المطلوب
-    document.getElementById(sectionId).style.display = "block";
+function showIpInfo() {
+    document.getElementById("ip-info").style.display = "block";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("email-info").style.display = "none";
+    window.location.href = "#ip-info";
+}
+
+function showEmailInfo() {
+    document.getElementById("email-info").style.display = "block";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("ip-info").style.display = "none";
+    window.location.href = "#email-info";
 }
 
 function getIpInfo() {
