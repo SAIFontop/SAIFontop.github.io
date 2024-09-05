@@ -1,17 +1,133 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم في بوت ديسكورد</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>911 Family</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 400px;
+        }
+
+        .header {
+            font-size: 48px;
+            margin: 20px 0;
+            color: #e5c100;
+            font-weight: bold;
+        }
+
+        .subtext {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e5c100;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .nav {
+            background-color: #222;
+            padding: 15px 0;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav ul li a:hover {
+            border: 2px solid #e5c100;
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #e5c100;
+            color: #111;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: #111;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>مرحبًا بك في لوحة التحكم في بوت ديسكورد</h1>
-        <a href="https://sai-fontop-github-io.vercel.app/api/callback" class="btn">تسجيل الدخول باستخدام Discord</a>
+    <div class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </div>
-    <script src="script.js"></script>
+
+    <div class="container">
+        <img src="logo.png" alt="911 Family Logo" class="logo">
+        <div class="header">911 Family</div>
+        <div class="subtext">Join our community and be a part of something amazing!</div>
+        
+        <div class="section">
+            <h2>Headline</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque eleifend arcu, et tincidunt ex venenatis nec.</p>
+        </div>
+
+        <div class="section">
+            <h2>Subtext</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque eleifend arcu, et tincidunt ex venenatis nec.</p>
+        </div>
+
+        <button class="button">Learn More</button>
+    </div>
 </body>
 </html>
