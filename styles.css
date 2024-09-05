@@ -1,53 +1,39 @@
-/* إعدادات أساسية */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>911 Family</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #1e1e1e, #2c2c2c);
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
+    <div class="container">
+        <img src="logo.png" alt="911 Family Logo" class="logo">
+        <div class="header">911 Family</div>
+        <div class="subtext">Join our community and be a part of something amazing!</div>
+        
+        <div class="section">
+            <h2>Headline</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque eleifend arcu, et tincidunt ex venenatis nec.</p>
+        </div>
 
-.container {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    width: 90%;
-    max-width: 400px;
-}
+        <div class="section">
+            <h2>Subtext</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque eleifend arcu, et tincidunt ex venenatis nec.</p>
+        </div>
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #ff5733;
-}
+        <button class="button" onclick="showAlert()">Learn More</button>
+    </div>
 
-.btn {
-    padding: 15px;
-    background-color: #ff5733;
-    color: #ffffff;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background-color: #e64a19;
-    transform: translateY(-2px);
-}
+    <script src="script.js"></script>
+</body>
+</html>
