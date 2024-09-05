@@ -2,25 +2,15 @@ function showAlert() {
     alert("Thank you for your interest in 911 Family! Stay tuned for more updates.");
 }
 
-function showAbout() {
-    document.getElementById("about").style.display = "block";
-    document.getElementById("ip-info").style.display = "none";
-    document.getElementById("email-info").style.display = "none";
-    window.location.href = "#about";
-}
-
-function showIpInfo() {
-    document.getElementById("ip-info").style.display = "block";
-    document.getElementById("about").style.display = "none";
-    document.getElementById("email-info").style.display = "none";
-    window.location.href = "#ip-info";
-}
-
-function showEmailInfo() {
-    document.getElementById("email-info").style.display = "block";
+function showSection(sectionId) {
+    // إخفاء كل الأقسام
+    document.getElementById("home").style.display = "none";
     document.getElementById("about").style.display = "none";
     document.getElementById("ip-info").style.display = "none";
-    window.location.href = "#email-info";
+    document.getElementById("email-info").style.display = "none";
+
+    // إظهار القسم المطلوب
+    document.getElementById(sectionId).style.display = "block";
 }
 
 function getIpInfo() {
@@ -43,7 +33,7 @@ function getIpInfo() {
 
 function getEmailInfo() {
     const email = document.getElementById("emailInput").value;
-    fetch(`https://emailrep.io/${email}?key=91cd8f313e5a8c`)
+    fetch(`https://emailrep.io/${email}?key=YOUR_API_KEY`)
         .then(response => response.json())
         .then(data => {
             document.getElementById("emailResult").innerHTML = `
