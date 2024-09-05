@@ -43,7 +43,7 @@ function getIpInfo() {
 
 function getEmailInfo() {
     const email = document.getElementById("emailInput").value;
-    fetch(`https://emailrep.io/${email}?key=YOUR_API_KEY`)
+    fetch(`https://emailrep.io/${email}?key=91cd8f313e5a8c`)
         .then(response => response.json())
         .then(data => {
             document.getElementById("emailResult").innerHTML = `
