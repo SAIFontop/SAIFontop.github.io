@@ -2,31 +2,26 @@ function showAlert() {
     alert("Thank you for your interest in 911 Family! Stay tuned for more updates.");
 }
 
-function showAbout() {
-    document.getElementById("about").style.display = "block";
-    document.getElementById("ip-info").style.display = "none";
-    document.getElementById("email-info").style.display = "none";
-    window.location.href = "#about";
-}
-
-function showIpInfo() {
-    document.getElementById("ip-info").style.display = "block";
-    document.getElementById("about").style.display = "none";
-    document.getElementById("email-info").style.display = "none";
-    window.location.href = "#ip-info";
-}
-
-function showEmailInfo() {
-    document.getElementById("email-info").style.display = "block";
+function showSection(sectionId) {
+    // إخفاء كل الأقسام
+    document.getElementById("home").style.display = "none";
     document.getElementById("about").style.display = "none";
     document.getElementById("ip-info").style.display = "none";
-    window.location.href = "#email-info";
+    document.getElementById("email-info").style.display = "none";
+
+    // إظهار القسم المطلوب
+    document.getElementById(sectionId).style.display = "block";
 }
 
 function getIpInfo() {
     const ip = document.getElementById("ipInput").value;
     fetch(`https://ipinfo.io/${ip}?token=YOUR_API_KEY`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error fetching IP info.");
+            }
+            return response.json();
+        })
         .then(data => {
             document.getElementById("ipResult").innerHTML = `
                 <p>IP: ${data.ip}</p>
@@ -37,14 +32,19 @@ function getIpInfo() {
             `;
         })
         .catch(error => {
-            document.getElementById("ipResult").innerHTML = `<p>Error fetching IP info. Please try again.</p>`;
+            document.getElementById("ipResult").innerHTML = `<p>${error.message} Please try again.</p>`;
         });
 }
 
 function getEmailInfo() {
     const email = document.getElementById("emailInput").value;
     fetch(`https://emailrep.io/${email}?key=YOUR_API_KEY`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error fetching email info.");
+            }
+            return response.json();
+        })
         .then(data => {
             document.getElementById("emailResult").innerHTML = `
                 <p>Email: ${data.email}</p>
@@ -55,6 +55,6 @@ function getEmailInfo() {
             `;
         })
         .catch(error => {
-            document.getElementById("emailResult").innerHTML = `<p>Error fetching email info. Please try again.</p>`;
+            document.getElementById("emailResult").innerHTML = `<p>${error.message} Please try again.</p>`;
         });
 }
