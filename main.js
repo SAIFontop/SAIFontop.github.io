@@ -2,17 +2,17 @@
 function sendLoginLink(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
 
-    const email = document.getElementById("emailInput").value;
+    const email = document.getElementById("emailInputLogin").value;
     const loginMessage = document.getElementById("loginMessage");
 
-    // تحقق من صحة البريد الإلكتروني (بشكل بسيط)
+    // تحقق من صحة البريد الإلكتروني
     if (!validateEmail(email)) {
         loginMessage.innerHTML = '<p style="color: red;">Invalid email address. Please try again.</p>';
         return;
     }
 
-    // طلب لإرسال رابط البريد الإلكتروني (هنا تحتاج لخدمة مثل SendGrid أو Mailgun)
-    // هذا مثال باستخدام Fetch API. ستحتاج لإعداد خدمة فعلية لإرسال البريد الإلكتروني
+    // طلب لإرسال رابط البريد الإلكتروني
+    // افتراض أنك ستستخدم خدمة مثل SendGrid أو Mailgun لإرسال البريد الإلكتروني
     fetch('/send-login-link', {
         method: 'POST',
         headers: {
@@ -42,8 +42,8 @@ function validateEmail(email) {
 
 // قائمة المستخدمين (مؤقتة للاختبار)
 let users = [
-    { name: 'User1', role: 'user' },
-    { name: 'User2', role: 'admin' },
+    { name: 'admin', role: 'admin' },
+    { name: 'owner', role: 'owner' },
 ];
 
 // دالة لإضافة أدمن
@@ -88,3 +88,25 @@ function updateUserList() {
 
 // عرض المستخدمين عند تحميل الصفحة
 updateUserList();
+
+// نظام النقاط
+let points = 0;
+
+function earnPoints() {
+    points += 10;
+    document.getElementById('points').innerText = points;
+    checkOffers();
+}
+
+function checkOffers() {
+    const offers = [
+        { name: "Free Item", cost: 50 },
+        { name: "10% Discount", cost: 100 }
+    ];
+
+    let availableOffers = offers.filter(offer => points >= offer.cost);
+    let offersHTML = availableOffers.length ? availableOffers.map(offer => `<p>${offer.name} - ${offer.cost} points</p>`).join('') : '<p>No offers available.</p>';
+    document.getElementById('availableOffers').innerHTML = offersHTML;
+}
+
+checkOffers();
