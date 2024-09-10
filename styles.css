@@ -1,30 +1,29 @@
-/* تحديث الأنماط لتناسب الألوان الجديدة */
-
+/* إعدادات الصفحة العامة */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #101010; /* خلفية سوداء */
-    color: #e5e5e5; /* لون النص الرئيسي */
+    color: #e5e5e5; /* لون النص */
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
-.container, .about-section, .ip-info-section, .email-info-section {
+.container, .about-section, .ip-info-section, .email-info-section, .login-section {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* إعدادات اللوغو */
 .logo {
     display: block;
-    margin: 0 auto 20px;
+    margin: 20px auto;
     max-width: 300px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* تأثيرات ظل باللون الأحمر */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -33,38 +32,38 @@ body {
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
 }
 
+/* إعدادات العناوين */
 .header {
     font-size: 48px;
-    margin: 20px 0;
-    color: #ff0000; /* تغيير اللون إلى الأحمر */
+    color: #ff0000;
     font-weight: bold;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .subtext {
-    font-size: 20px;
+    font-size: 18px;
+    color: #e5e5e5;
     margin-bottom: 40px;
-    color: #ffffff; /* لون أبيض */
 }
 
+/* شريط التنقل */
 .nav {
-    background-color: #202020; /* شريط تنقل باللون الأسود */
+    background-color: #202020;
     padding: 15px 0;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
 }
 
 .nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    animation: slideIn 1s ease-out;
 }
 
 .nav ul li {
@@ -73,7 +72,7 @@ body {
 
 .nav ul li a {
     text-decoration: none;
-    color: #ffffff; /* لون النص في شريط التنقل */
+    color: #ffffff;
     font-size: 18px;
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -81,13 +80,14 @@ body {
 }
 
 .nav ul li a:hover {
-    border: 2px solid #ff0000; /* تأثير باللون الأحمر */
+    border: 2px solid #ff0000;
     border-radius: 5px;
 }
 
+/* الأزرار */
 .button {
-    background-color: #ff0000; /* لون الأزرار أحمر */
-    color: #ffffff; /* لون النص أبيض */
+    background-color: #ff0000;
+    color: #ffffff;
     padding: 15px 30px;
     font-size: 18px;
     border: none;
@@ -95,67 +95,71 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin: 10px;
+    border-radius: 5px;
 }
 
 .button:hover {
-    background-color: #00ff00; /* عند التمرير فوق الزر يصبح اللون أخضر فاتح */
+    background-color: #00ff00;
     color: #111;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
-.discord-link {
-    font-size: 20px;
-    color: #ff0000; /* لون رابط الديسكورد أحمر */
-    text-decoration: none;
-    border-bottom: 2px solid #ff0000;
-    padding-bottom: 5px;
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.discord-link:hover {
-    color: #00ff00; /* عند التمرير فوق الرابط يصبح اللون أخضر فاتح */
-    border-bottom-color: #00ff00;
-}
-
-.footer {
-    background-color: #202020; /* لون الفوتر أسود */
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-
-input[type="text"] {
+/* إدخالات النصوص */
+input[type="text"], input[type="email"] {
     padding: 10px;
     font-size: 16px;
     width: 80%;
     max-width: 400px;
     margin-bottom: 20px;
-    border: 1px solid #ff0000; /* حواف حقل الإدخال باللون الأحمر */
+    border: 1px solid #ff0000;
     border-radius: 5px;
     color: #111;
 }
 
-#ipResult, #emailResult {
+input[type="text"]:focus, input[type="email"]:focus {
+    border-color: #00ff00;
+    outline: none;
+}
+
+/* تنسيق الرسائل */
+#loginMessage, #ipResult, #emailResult {
     margin-top: 20px;
     color: #e5e5e5;
-    background-color: #181818; /* خلفية النتائج */
+    background-color: #181818;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* قسم النقاط */
+h3 {
+    color: #ff0000;
+    margin-top: 40px;
+}
+
+/* مكان العروض */
+#availableOffers p {
+    background-color: #202020;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* الفوتر */
+.footer {
+    background-color: #202020;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* الحركات */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
 }
