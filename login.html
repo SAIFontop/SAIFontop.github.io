@@ -17,25 +17,23 @@
     </div>
 
     <!-- قسم تسجيل الدخول -->
-    <div class="container" id="login">
+    <div class="form-container">
         <h2>Login</h2>
-        <p>Please enter your Discord ID, Username, and Password:</p>
+        <p>Please enter your email and password:</p>
 
         <!-- نموذج تسجيل الدخول -->
-        <form id="loginForm" onsubmit="handleLogin(event)">
-            <input type="text" id="discordID" placeholder="Enter your Discord ID" required>
-            <input type="text" id="username" placeholder="Enter your Username" required>
-            <input type="password" id="password" placeholder="Enter your Password" required>
+        <form id="loginForm" onsubmit="handleLogin(event)" class="form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
             <button class="button" type="submit">Login</button>
         </form>
 
         <!-- مكان عرض الرسائل -->
         <div id="loginMessage"></div>
-
-        <!-- صورة البروفايل -->
-        <div id="avatar" style="display: none;">
-            <img id="avatarImage" src="" alt="Profile Avatar" class="avatar">
-        </div>
     </div>
 
     <!-- الفوتر -->
