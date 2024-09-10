@@ -1,8 +1,8 @@
 /* إعدادات الصفحة العامة */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #101010; /* خلفية سوداء */
-    color: #e5e5e5; /* لون النص */
+    background-color: #101010;
+    color: #e5e5e5;
     margin: 0;
     padding: 0;
 }
@@ -15,23 +15,6 @@ body {
     padding: 50px 0;
 }
 
-/* إعدادات اللوغو */
-.logo {
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-}
-
-/* إعدادات العناوين */
 .header {
     font-size: 48px;
     color: #ff0000;
@@ -40,50 +23,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.subtext {
-    font-size: 18px;
-    color: #e5e5e5;
-    margin-bottom: 40px;
-}
-
-/* شريط التنقل */
-.nav {
-    background-color: #202020;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.nav ul li {
-    margin: 0 15px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.nav ul li a:hover {
-    border: 2px solid #ff0000;
-    border-radius: 5px;
-}
-
-/* الأزرار */
 .button {
     background-color: #ff0000;
     color: #ffffff;
@@ -92,20 +31,17 @@ body {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin: 10px;
     border-radius: 5px;
 }
 
 .button:hover {
     background-color: #00ff00;
-    color: #111;
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* إدخالات النصوص */
-input[type="email"], input[type="password"] {
+/* حقول الإدخال */
+input[type="text"], input[type="password"] {
     padding: 10px;
     font-size: 16px;
     width: 80%;
@@ -116,19 +52,9 @@ input[type="email"], input[type="password"] {
     color: #111;
 }
 
-input[type="email"]:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="password"]:focus {
     border-color: #00ff00;
     outline: none;
-}
-
-/* الرسائل */
-#registerMessage, #loginMessage {
-    margin-top: 20px;
-    color: #e5e5e5;
-    background-color: #181818;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* الفوتر */
@@ -139,5 +65,4 @@ input[type="email"]:focus, input[type="password"]:focus {
     text-align: center;
     width: 100%;
     position: relative;
-    bottom: 0;
 }
