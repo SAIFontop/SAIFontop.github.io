@@ -1,75 +1,80 @@
-// دالة لتسجيل المستخدم
-function registerUser(event) {
+// دالة لإظهار القسم المطلوب وإخفاء الأقسام الأخرى
+function showSection(sectionId) {
+    // إخفاء جميع الأقسام
+    const sections = document.querySelectorAll('.container, .about-section, .ip-info-section, .email-info-section, .login-section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // إظهار القسم المطلوب
+    const sectionToShow = document.getElementById(sectionId);
+    if (sectionToShow) {
+        sectionToShow.style.display = 'block';
+    }
+}
+
+// دالة لتسجيل النقاط
+let points = 0;
+
+function earnPoints() {
+    points += 10; // يمكنك تخصيص هذه القيمة
+    document.getElementById('points').innerText = points;
+    checkOffers(); // التحقق من العروض المتاحة بناءً على النقاط
+}
+
+function checkOffers() {
+    const offers = [
+        { name: "Free Item", cost: 50 },
+        { name: "10% Discount", cost: 100 }
+    ];
+
+    let availableOffers = offers.filter(offer => points >= offer.cost);
+    let offersHTML = availableOffers.length ? availableOffers.map(offer => `<p>${offer.name} - ${offer.cost} points</p>`).join('') : '<p>No offers available.</p>';
+    document.getElementById('availableOffers').innerHTML = offersHTML;
+}
+
+// دالة للحصول على معلومات الـ IP
+function getIpInfo() {
+    const ip = document.getElementById("ipInput").value;
+    fetch(`https://ipinfo.io/${ip}?token=YOUR_API_KEY`) // استبدل YOUR_API_KEY بمفتاح API الخاص بك
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('ipResult').innerHTML = `
+                <p><strong>IP:</strong> ${data.ip}</p>
+                <p><strong>City:</strong> ${data.city}</p>
+                <p><strong>Region:</strong> ${data.region}</p>
+                <p><strong>Country:</strong> ${data.country}</p>
+            `;
+        })
+        .catch(error => {
+            document.getElementById('ipResult').innerHTML = `<p>Error fetching IP info. Please try again.</p>`;
+        });
+}
+
+// دالة للحصول على معلومات البريد الإلكتروني
+function getEmailInfo() {
+    const email = document.getElementById("emailInput").value;
+    fetch(`https://emailrep.io/${email}`) // يمكنك استخدام API مثل EmailRep.io للحصول على معلومات البريد الإلكتروني
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('emailResult').innerHTML = `
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Reputation:</strong> ${data.reputation}</p>
+                <p><strong>Suspicious:</strong> ${data.suspicious}</p>
+            `;
+        })
+        .catch(error => {
+            document.getElementById('emailResult').innerHTML = `<p>Error fetching email info. Please try again.</p>`;
+        });
+}
+
+// دالة لإرسال رابط تسجيل الدخول عبر البريد الإلكتروني
+function sendLoginLink(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
 
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
-    const registerMessage = document.getElementById("registerMessage");
-
-    // تحقق من صحة البريد الإلكتروني وكلمة المرور (بشكل بسيط)
-    if (!validateEmail(email) || password.length < 6) {
-        registerMessage.innerHTML = '<p style="color: red;">Invalid email or password (min 6 characters). Please try again.</p>';
-        return;
-    }
-
-    // إرسال البيانات إلى الخادم (إذا كنت تستخدم قاعدة بيانات)
-    fetch('/register', { // افتراض أنك ستستخدم API للتسجيل
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email, password: password }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Registration failed.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        registerMessage.innerHTML = '<p style="color: green;">Registration successful! Welcome to 911 Family.</p>';
-    })
-    .catch(error => {
-        registerMessage.innerHTML = `<p style="color: red;">${error.message}. Please try again.</p>`;
-    });
-}
-
-// دالة لتسجيل الدخول
-function sendLoginLink(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("loginEmail").value;
+    const email = document.getElementById("emailInputLogin").value;
     const loginMessage = document.getElementById("loginMessage");
 
-    if (!validateEmail(email)) {
-        loginMessage.innerHTML = '<p style="color: red;">Invalid email address. Please try again.</p>';
-        return;
-    }
-
-    // إرسال طلب تسجيل الدخول (يمكن أن يكون هذا إلى API)
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Login failed.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        loginMessage.innerHTML = '<p style="color: green;">Login link sent! Check your email.</p>';
-    })
-    .catch(error => {
-        loginMessage.innerHTML = `<p style="color: red;">${error.message}. Please try again.</p>`;
-    });
-}
-
-// دالة للتحقق من صحة البريد الإلكتروني
-function validateEmail(email) {
-    const re = /\S+@\S+\.\S+/;
-    return re.test(email);
+    // هنا يمكنك إرسال البريد الإلكتروني باستخدام خدمة مثل SendGrid أو Mailgun
+    loginMessage.innerHTML = `<p style="color: green;">Login link sent to ${email}. Please check your inbox.</p>`;
 }
