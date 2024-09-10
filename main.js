@@ -53,4 +53,29 @@ function handleLogin(event) {
     } else {
         loginMessage.innerHTML = `<p style="color: green;">Welcome back, ${username}.</p>`;
     }
+
+    // جلب الصورة الرمزية بناءً على Discord ID
+    getDiscordAvatar(discordID);
+}
+
+// دالة لجلب الصورة الرمزية بناءً على Discord ID
+function getDiscordAvatar(discordID) {
+    const avatarDiv = document.getElementById("avatar");
+    const avatarImage = document.getElementById("avatarImage");
+
+    // هنا نستخدم رابط افتراضي للصورة بناءً على Discord ID، في حالة كانت هناك خدمة Discord API يمكن استخدامها
+    fetch(`https://discord.com/api/users/${discordID}`, {
+        headers: {
+            "Authorization": `Bot YOUR_DISCORD_BOT_TOKEN`  // استخدم توكن البوت الخاص بك هنا
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const avatarUrl = `https://cdn.discordapp.com/avatars/${discordID}/${data.avatar}.png?size=128`;
+        avatarImage.src = avatarUrl;
+        avatarDiv.style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error fetching Discord avatar:', error);
+    });
 }
