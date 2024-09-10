@@ -17,15 +17,21 @@
     </div>
 
     <!-- قسم التسجيل -->
-    <div class="container" id="register">
+    <div class="register-container">
         <h2>Register</h2>
-        <p>Create your account by entering Discord ID, Username, and Password:</p>
+        <p>Create your account to join 911 Family!</p>
 
         <!-- نموذج التسجيل -->
-        <form id="registerForm" onsubmit="registerUser(event)">
+        <form id="registerForm" onsubmit="registerUser(event)" class="form">
+            <label for="discordID">Discord ID</label>
             <input type="text" id="discordID" placeholder="Enter your Discord ID" required>
+
+            <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter your Username" required>
+
+            <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter your Password" required>
+
             <button class="button" type="submit">Register</button>
         </form>
 
