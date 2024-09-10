@@ -10,10 +10,10 @@
     <!-- شريط التنقل -->
     <div class="nav">
         <ul>
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#about" onclick="showSection('about')">About</a></li>
-            <li><a href="#ip-info" onclick="showSection('ip-info')">IP Info</a></li>
-            <li><a href="#email-info" onclick="showSection('email-info')">Email Info</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#ip-info">IP Info</a></li>
+            <li><a href="#email-info">Email Info</a></li>
             <li><a href="login.html">Admin/Login</a></li>
         </ul>
     </div>
@@ -32,40 +32,31 @@
 
         <!-- نظام النقاط -->
         <h3>Your Points: <span id="points">0</span></h3>
-        <button class="button" onclick="earnPoints()">Earn More Points</button>
-
-        <!-- العروض بناءً على النقاط -->
-        <div id="availableOffers"></div>
+        <button class="button">Earn More Points</button>
     </div>
 
     <!-- قسم "About" -->
-    <div class="about-section" id="about" style="display: none;">
-        <div class="about-container">
-            <h2>About Us</h2>
-            <p>This website is managed by <strong>Nahyan</strong> and <strong>Saif</strong>, dedicated members of the 911 Family community.</p>
-            <p>Join us on Discord for more information and to become part of the community:</p>
-            <a href="https://discord.gg/c91" target="_blank" class="discord-link">Join our Discord</a>
-        </div>
+    <div class="about-section" id="about">
+        <h2>About Us</h2>
+        <p>This website is managed by <strong>Nahyan</strong> and <strong>Saif</strong>, dedicated members of the 911 Family community.</p>
+        <p>Join us on Discord for more information and to become part of the community:</p>
+        <a href="https://discord.gg/c91" target="_blank" class="discord-link">Join our Discord</a>
     </div>
 
     <!-- قسم "IP Info" -->
-    <div class="ip-info-section" id="ip-info" style="display: none;">
-        <div class="ip-info-container">
-            <h2>IP Information</h2>
-            <input type="text" id="ipInput" placeholder="Enter IP Address">
-            <button class="button" onclick="getIpInfo()">Get IP Info</button>
-            <div id="ipResult"></div>
-        </div>
+    <div class="info-section" id="ip-info">
+        <h2>IP Information</h2>
+        <input type="text" id="ipInput" placeholder="Enter IP Address">
+        <button class="button" onclick="getIpInfo()">Get IP Info</button>
+        <div id="ipResult"></div>
     </div>
 
     <!-- قسم "Email Info" -->
-    <div class="email-info-section" id="email-info" style="display: none;">
-        <div class="email-info-container">
-            <h2>Email Information</h2>
-            <input type="text" id="emailInput" placeholder="Enter Email Address">
-            <button class="button" onclick="getEmailInfo()">Get Email Info</button>
-            <div id="emailResult"></div>
-        </div>
+    <div class="info-section" id="email-info">
+        <h2>Email Information</h2>
+        <input type="text" id="emailInput" placeholder="Enter Email Address">
+        <button class="button" onclick="getEmailInfo()">Get Email Info</button>
+        <div id="emailResult"></div>
     </div>
 
     <!-- الفوتر -->
@@ -73,7 +64,7 @@
         <p>© 2024 911 Family. All rights reserved.</p>
     </div>
 
-    <!-- تضمين ملف JavaScript الموحد -->
+    <!-- تضمين ملف JavaScript -->
     <script src="main.js"></script>
 </body>
 </html>
