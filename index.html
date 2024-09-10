@@ -26,6 +26,13 @@
         <!-- أزرار لعرض الأقسام -->
         <button class="button" onclick="showSection('ip-info')">Show IP Info</button>
         <button class="button" onclick="showSection('email-info')">Show Email Info</button>
+
+        <!-- أزرار لنظام النقاط -->
+        <h3>Your Points: <span id="points">0</span></h3>
+        <button onclick="earnPoints()">Earn More Points</button>
+
+        <!-- العروض بناءً على النقاط -->
+        <div id="availableOffers"></div>
     </div>
 
     <!-- قسم "About" -->
@@ -63,7 +70,7 @@
         <p>© 2024 911 Family. All rights reserved.</p>
     </div>
 
-    <!-- تضمين ملف JavaScript -->
-    <script src="script.js"></script>
+    <!-- تضمين ملف JavaScript الموحد -->
+    <script src="main.js"></script>
 </body>
 </html>
