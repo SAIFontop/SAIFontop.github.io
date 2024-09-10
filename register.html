@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - 911 Family</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <div class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html" class="active">Register</a></li> <!-- رابط صفحة التسجيل -->
+        </ul>
+    </div>
+
+    <!-- قسم التسجيل -->
+    <div class="container" id="register">
+        <h2>Register</h2>
+        <p>Create your account to join the 911 Family community!</p>
+
+        <!-- نموذج التسجيل -->
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <input type="email" id="registerEmail" placeholder="Enter your email" required>
+            <input type="password" id="registerPassword" placeholder="Enter your password" required>
+            <button class="button" type="submit">Register</button>
+        </form>
+
+        <!-- مكان عرض رسالة النجاح أو الفشل -->
+        <div id="registerMessage"></div>
+    </div>
+
+    <!-- الفوتر -->
+    <div class="footer">
+        <p>© 2024 911 Family. All rights reserved.</p>
+    </div>
+
+    <!-- تضمين ملف JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
