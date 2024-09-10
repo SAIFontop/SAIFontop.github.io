@@ -10,12 +10,6 @@ body {
     min-height: 100vh;
 }
 
-h2 {
-    font-size: 2.5rem;
-    color: #ff3e3e; /* اللون الأحمر المميز */
-    margin-bottom: 20px;
-}
-
 /* إعدادات شريط التنقل */
 .nav {
     background-color: #262626;
@@ -54,64 +48,59 @@ h2 {
 }
 
 /* إعدادات الحاوية */
-.register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: #2e2e2e; /* لون خلفية داكن */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.container {
+    max-width: 1000px; /* تحديد عرض الحاوية */
+    margin: 0 auto;
+    padding: 50px 0;
     text-align: center;
 }
 
-p {
+/* إعدادات النصوص */
+.header {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff3e3e; /* اللون الأحمر */
+}
+
+.subtext {
     font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* إعدادات النموذج */
-.form label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #d1d1d1;
-    text-align: left;
-}
-
-.form input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #383838;
     color: #ffffff;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.form input:focus {
-    outline: none;
-    background-color: #444444;
+    margin-bottom: 40px;
 }
 
 /* إعدادات الأزرار */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .button {
     background-color: #ff3e3e;
     color: #ffffff;
-    padding: 15px;
+    padding: 10px 20px; /* حجم الأزرار مناسب */
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
+    margin: 10px 0; /* إضافة هامش فوق وتحت */
+    width: 200px; /* عرض الزر ثابت */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
-    margin-bottom: 10px;
 }
 
 .button:hover {
     background-color: #ff5e5e;
     transform: translateY(-2px);
+}
+
+/* إعدادات نظام النقاط */
+h3 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+#points {
+    color: #ff3e3e;
 }
 
 /* إعدادات الفوتر */
@@ -133,18 +122,22 @@ p {
     color: #ff3e3e;
 }
 
+/* إعدادات الصورة */
+.logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
 /* شاشة صغيرة - تعديل التصميم لجعل الحاوية أكثر تناسقاً */
 @media (max-width: 768px) {
-    .register-container {
+    .container {
         padding: 20px;
     }
 
     h2 {
         font-size: 2rem;
-    }
-
-    .form input {
-        font-size: 0.9rem;
     }
 
     .button {
