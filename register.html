@@ -19,12 +19,13 @@
     <!-- قسم التسجيل -->
     <div class="container" id="register">
         <h2>Register</h2>
-        <p>Create your account to join the 911 Family community!</p>
+        <p>Create your account by entering Discord ID, Username, and Password:</p>
 
         <!-- نموذج التسجيل -->
         <form id="registerForm" onsubmit="registerUser(event)">
-            <input type="email" id="registerEmail" placeholder="Enter your email" required>
-            <input type="password" id="registerPassword" placeholder="Enter your password" required>
+            <input type="text" id="discordID" placeholder="Enter your Discord ID" required>
+            <input type="text" id="username" placeholder="Enter your Username" required>
+            <input type="password" id="password" placeholder="Enter your Password" required>
             <button class="button" type="submit">Register</button>
         </form>
 
