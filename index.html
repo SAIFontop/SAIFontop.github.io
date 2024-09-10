@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- شريط التنقل -->
     <div class="nav">
         <ul>
             <li><a href="#home" onclick="showSection('home')">Home</a></li>
@@ -16,17 +17,18 @@
         </ul>
     </div>
 
+    <!-- قسم الصفحة الرئيسية -->
     <div class="container" id="home">
         <img src="logo.gif" alt="911 Family Logo" class="logo">
         <div class="header">911 Family</div>
         <div class="subtext">Join our community and be a part of something amazing!</div>
-        
-        <!-- الأزرار لإظهار الأقسام -->
+
+        <!-- أزرار لعرض الأقسام -->
         <button class="button" onclick="showSection('ip-info')">Show IP Info</button>
         <button class="button" onclick="showSection('email-info')">Show Email Info</button>
     </div>
 
-    <!-- قسم "About" يبقى كما هو -->
+    <!-- قسم "About" -->
     <div class="about-section" id="about" style="display: none;">
         <div class="about-container">
             <h2>About Us</h2>
@@ -36,7 +38,7 @@
         </div>
     </div>
 
-    <!-- قسم "IP Info" مخفي في البداية -->
+    <!-- قسم "IP Info" -->
     <div class="ip-info-section" id="ip-info" style="display: none;">
         <div class="ip-info-container">
             <h2>IP Information</h2>
@@ -46,7 +48,7 @@
         </div>
     </div>
 
-    <!-- قسم "Email Info" مخفي في البداية -->
+    <!-- قسم "Email Info" -->
     <div class="email-info-section" id="email-info" style="display: none;">
         <div class="email-info-container">
             <h2>Email Information</h2>
@@ -56,10 +58,12 @@
         </div>
     </div>
 
+    <!-- الفوتر -->
     <div class="footer">
         <p>© 2024 911 Family. All rights reserved.</p>
     </div>
 
+    <!-- تضمين ملف JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
