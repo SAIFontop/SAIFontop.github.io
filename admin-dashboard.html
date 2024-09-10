@@ -8,15 +8,21 @@
 </head>
 <body>
     <div class="admin-dashboard">
-        <h1>Welcome, Admin / Owner</h1>
-        <div class="admin-actions">
-            <button onclick="manageUsers()">Manage Users</button>
-            <button onclick="manageContent()">Manage Content</button>
-            <button onclick="manageOffers()">Manage Exclusive Offers</button>
-            <button onclick="logout()">Logout</button>
-        </div>
+        <h1>Welcome, Admin/Owner</h1>
 
-        <div id="adminPanel"></div>
+        <!-- زر لإضافة مستخدم كأدمن -->
+        <button onclick="addAdmin()">Add Admin</button>
+
+        <!-- زر لإضافة مستخدم كأونر -->
+        <button onclick="addOwner()">Add Owner</button>
+
+        <!-- قائمة المستخدمين -->
+        <div id="userList">
+            <h2>User List</h2>
+            <ul id="users">
+                <!-- سيتم عرض المستخدمين هنا -->
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>
