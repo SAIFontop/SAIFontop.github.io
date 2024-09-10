@@ -19,12 +19,14 @@
     <!-- قسم تسجيل الدخول -->
     <div class="container" id="login">
         <h2>Login</h2>
-        <p>Please enter your email to login:</p>
+        <p>Please enter your Discord ID, Username, and Password:</p>
 
         <!-- نموذج تسجيل الدخول -->
-        <form id="loginForm" onsubmit="sendLoginLink(event)">
-            <input type="email" id="loginEmail" placeholder="Enter your email" required>
-            <button class="button" type="submit">Send Login Link</button>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <input type="text" id="discordID" placeholder="Enter your Discord ID" required>
+            <input type="text" id="username" placeholder="Enter your Username" required>
+            <input type="password" id="password" placeholder="Enter your Password" required>
+            <button class="button" type="submit">Login</button>
         </form>
 
         <!-- مكان عرض الرسائل -->
