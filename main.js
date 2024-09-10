@@ -1,55 +1,70 @@
-// قائمة المستخدمين، سيتم تخزين البيانات بشكل مؤقت هنا
-let users = [];
-let ownerEmail = null;  // متغير لتخزين البريد الإلكتروني للأونر
-
-// دالة تسجيل المستخدم الجديد
-function registerUser(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const registerMessage = document.getElementById("registerMessage");
-
-    // التحقق من وجود المستخدم مسبقًا
-    const existingUser = users.find(user => user.email === email);
-
-    if (existingUser) {
-        registerMessage.innerHTML = '<p style="color: red;">User with this email already exists.</p>';
-        return;
-    }
-
-    // إضافة المستخدم الجديد
-    users.push({ email, username, password, role: users.length === 0 ? 'owner' : 'user' });
-
-    // تعيين أول مستخدم كأونر
-    if (users.length === 1) {
-        ownerEmail = email;
-    }
-
-    registerMessage.innerHTML = `<p style="color: green;">Registration successful! Welcome, ${username}.</p>`;
+// عرض الأقسام المختلفة بناءً على الزر الذي يتم النقر عليه
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.container, .info-section, .about-section');
+    sections.forEach(section => section.style.display = 'none'); // إخفاء جميع الأقسام
+    document.getElementById(sectionId).style.display = 'block'; // إظهار القسم المطلوب
 }
 
-// دالة تسجيل الدخول
-function handleLogin(event) {
-    event.preventDefault();
+// دالة للحصول على معلومات IP
+function getIpInfo() {
+    const ip = document.getElementById("ipInput").value; // الحصول على IP من المدخل
+    const ipResult = document.getElementById("ipResult"); // منطقة عرض النتائج
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const loginMessage = document.getElementById("loginMessage");
-
-    // التحقق من وجود المستخدم
-    const user = users.find(u => u.email === email && u.password === password);
-
-    if (!user) {
-        loginMessage.innerHTML = '<p style="color: red;">Invalid email or password.</p>';
+    // التحقق من أن IP تم إدخاله
+    if (!ip) {
+        ipResult.innerHTML = '<p style="color: red;">Please enter a valid IP address.</p>';
         return;
     }
 
-    // التحقق إذا كان المستخدم هو الأونر
-    if (user.email === ownerEmail) {
-        loginMessage.innerHTML = `<p style="color: green;">Welcome back, ${user.username} (Owner).</p>`;
-    } else {
-        loginMessage.innerHTML = `<p style="color: green;">Welcome back, ${user.username}.</p>`;
+    // طلب معلومات IP من API
+    fetch(`https://ipinfo.io/${ip}/json?token=YOUR_API_TOKEN`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                ipResult.innerHTML = `<p style="color: red;">Error: ${data.error.message}</p>`;
+            } else {
+                ipResult.innerHTML = `
+                    <p>IP: ${data.ip}</p>
+                    <p>City: ${data.city}</p>
+                    <p>Region: ${data.region}</p>
+                    <p>Country: ${data.country}</p>
+                    <p>ISP: ${data.org}</p>
+                `;
+            }
+        })
+        .catch(error => {
+            ipResult.innerHTML = `<p style="color: red;">Error fetching IP info. Please try again.</p>`;
+        });
+}
+
+// دالة للحصول على معلومات البريد الإلكتروني
+function getEmailInfo() {
+    const email = document.getElementById("emailInput").value; // الحصول على البريد الإلكتروني من المدخل
+    const emailResult = document.getElementById("emailResult"); // منطقة عرض النتائج
+
+    // التحقق من أن البريد الإلكتروني تم إدخاله
+    if (!email) {
+        emailResult.innerHTML = '<p style="color: red;">Please enter a valid email address.</p>';
+        return;
     }
+
+    // طلب معلومات البريد الإلكتروني من API
+    fetch(`https://emailrep.io/${email}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.reputation) {
+                emailResult.innerHTML = `
+                    <p>Email: ${data.email}</p>
+                    <p>Reputation: ${data.reputation}</p>
+                    <p>Suspicious: ${data.suspicious ? 'Yes' : 'No'}</p>
+                    <p>Blacklisted: ${data.details.blacklisted ? 'Yes' : 'No'}</p>
+                    <p>Malicious Activity: ${data.details.malicious_activity ? 'Yes' : 'No'}</p>
+                `;
+            } else {
+                emailResult.innerHTML = `<p style="color: red;">No data found for this email.</p>`;
+            }
+        })
+        .catch(error => {
+            emailResult.innerHTML = `<p style="color: red;">Error fetching email info. Please try again.</p>`;
+        });
 }
