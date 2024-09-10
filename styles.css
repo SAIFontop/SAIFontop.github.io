@@ -1,68 +1,153 @@
 /* إعدادات الصفحة العامة */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #101010;
-    color: #e5e5e5;
+    background-color: #1c1c1c; /* خلفية داكنة */
+    color: #ffffff; /* لون النص أبيض */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 50px 0;
-}
-
-.header {
-    font-size: 48px;
-    color: #ff0000;
-    font-weight: bold;
+h2 {
+    font-size: 2.5rem;
+    color: #ff3e3e; /* اللون الأحمر المميز */
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.button {
-    background-color: #ff0000;
+/* إعدادات شريط التنقل */
+.nav {
+    background-color: #262626;
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul li {
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    text-decoration: none;
     color: #ffffff;
-    padding: 15px 30px;
     font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #ff3e3e;
+}
+
+.active {
+    border-bottom: 2px solid #ff3e3e;
+}
+
+/* إعدادات الحاوية */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #2e2e2e; /* لون خلفية داكن */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* إعدادات النموذج */
+.form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #d1d1d1;
+    text-align: left;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
     border: none;
+    border-radius: 5px;
+    background-color: #383838;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.form input:focus {
+    outline: none;
+    background-color: #444444;
+}
+
+/* إعدادات الأزرار */
+.button {
+    background-color: #ff3e3e;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .button:hover {
-    background-color: #00ff00;
+    background-color: #ff5e5e;
     transform: translateY(-2px);
 }
 
-/* حقول الإدخال */
-input[type="text"], input[type="password"] {
-    padding: 10px;
-    font-size: 16px;
-    width: 80%;
-    max-width: 400px;
-    margin-bottom: 20px;
-    border: 1px solid #ff0000;
-    border-radius: 5px;
-    color: #111;
-}
-
-input[type="text"]:focus, input[type="password"]:focus {
-    border-color: #00ff00;
-    outline: none;
-}
-
-/* الفوتر */
+/* إعدادات الفوتر */
 .footer {
-    background-color: #202020;
+    background-color: #262626;
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    width: 100%;
     position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* عرض الرسائل */
+#registerMessage {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #ff3e3e;
+}
+
+/* شاشة صغيرة - تعديل التصميم لجعل الحاوية أكثر تناسقاً */
+@media (max-width: 768px) {
+    .register-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .form input {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
 }
