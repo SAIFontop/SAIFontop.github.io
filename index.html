@@ -14,6 +14,7 @@
             <li><a href="#about" onclick="showSection('about')">About</a></li>
             <li><a href="#ip-info" onclick="showSection('ip-info')">IP Info</a></li>
             <li><a href="#email-info" onclick="showSection('email-info')">Email Info</a></li>
+            <li><a href="#login" onclick="showSection('login')">Admin/Login</a></li> <!-- زر تسجيل الدخول -->
         </ul>
     </div>
 
@@ -24,12 +25,14 @@
         <div class="subtext">Join our community and be a part of something amazing!</div>
 
         <!-- أزرار لعرض الأقسام -->
-        <button class="button" onclick="showSection('ip-info')">Show IP Info</button>
-        <button class="button" onclick="showSection('email-info')">Show Email Info</button>
+        <div class="button-container">
+            <button class="button" onclick="showSection('ip-info')">Show IP Info</button>
+            <button class="button" onclick="showSection('email-info')">Show Email Info</button>
+        </div>
 
-        <!-- أزرار لنظام النقاط -->
+        <!-- نظام النقاط -->
         <h3>Your Points: <span id="points">0</span></h3>
-        <button onclick="earnPoints()">Earn More Points</button>
+        <button class="button" onclick="earnPoints()">Earn More Points</button>
 
         <!-- العروض بناءً على النقاط -->
         <div id="availableOffers"></div>
@@ -50,7 +53,7 @@
         <div class="ip-info-container">
             <h2>IP Information</h2>
             <input type="text" id="ipInput" placeholder="Enter IP Address">
-            <button onclick="getIpInfo()">Get IP Info</button>
+            <button class="button" onclick="getIpInfo()">Get IP Info</button>
             <div id="ipResult"></div>
         </div>
     </div>
@@ -60,8 +63,25 @@
         <div class="email-info-container">
             <h2>Email Information</h2>
             <input type="text" id="emailInput" placeholder="Enter Email Address">
-            <button onclick="getEmailInfo()">Get Email Info</button>
+            <button class="button" onclick="getEmailInfo()">Get Email Info</button>
             <div id="emailResult"></div>
+        </div>
+    </div>
+
+    <!-- قسم تسجيل الدخول -->
+    <div class="login-section" id="login" style="display: none;">
+        <div class="login-container">
+            <h2>Login</h2>
+            <p>Please enter your email to receive a login link:</p>
+
+            <!-- نموذج إدخال البريد الإلكتروني -->
+            <form id="loginForm" onsubmit="sendLoginLink(event)">
+                <input type="email" id="emailInputLogin" placeholder="Enter your email" required>
+                <button class="button" type="submit">Send Login Link</button>
+            </form>
+
+            <!-- مكان لعرض رسالة النجاح أو الخطأ -->
+            <div id="loginMessage"></div>
         </div>
     </div>
 
