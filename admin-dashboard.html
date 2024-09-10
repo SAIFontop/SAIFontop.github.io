@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <h1>Welcome, Admin / Owner</h1>
+        <div class="admin-actions">
+            <button onclick="manageUsers()">Manage Users</button>
+            <button onclick="manageContent()">Manage Content</button>
+            <button onclick="manageOffers()">Manage Exclusive Offers</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div id="adminPanel"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
