@@ -14,7 +14,7 @@
             <li><a href="#about" onclick="showSection('about')">About</a></li>
             <li><a href="#ip-info" onclick="showSection('ip-info')">IP Info</a></li>
             <li><a href="#email-info" onclick="showSection('email-info')">Email Info</a></li>
-            <li><a href="#login" onclick="showSection('login')">Admin/Login</a></li>
+            <li><a href="login.html">Admin/Login</a></li>
         </ul>
     </div>
 
@@ -65,23 +65,6 @@
             <input type="text" id="emailInput" placeholder="Enter Email Address">
             <button class="button" onclick="getEmailInfo()">Get Email Info</button>
             <div id="emailResult"></div>
-        </div>
-    </div>
-
-    <!-- قسم تسجيل الدخول -->
-    <div class="login-section" id="login" style="display: none;">
-        <div class="login-container">
-            <h2>Login</h2>
-            <p>Please enter your email to receive a login link:</p>
-
-            <!-- نموذج إدخال البريد الإلكتروني -->
-            <form id="loginForm" onsubmit="sendLoginLink(event)">
-                <input type="email" id="emailInputLogin" placeholder="Enter your email" required>
-                <button class="button" type="submit">Send Login Link</button>
-            </form>
-
-            <!-- مكان لعرض رسالة النجاح أو الخطأ -->
-            <div id="loginMessage"></div>
         </div>
     </div>
 
