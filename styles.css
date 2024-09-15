@@ -1,154 +1,68 @@
-/* إعدادات الصفحة العامة */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1c1c1c; /* خلفية داكنة */
-    color: #ffffff; /* لون النص أبيض */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+header {
+    background-color: #5865F2;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-/* إعدادات شريط التنقل */
-.nav {
-    background-color: #262626;
-    padding: 15px 0;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+h1 {
+    margin: 0;
 }
 
-.nav ul {
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #5865F2;
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.bots-list ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
-.nav ul li {
-    margin: 0 15px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.nav ul li a:hover {
-    border-bottom: 2px solid #ff3e3e;
-}
-
-.active {
-    border-bottom: 2px solid #ff3e3e;
-}
-
-/* إعدادات الحاوية */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
-}
-
-/* إعدادات النصوص */
-.header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ff3e3e;
-}
-
-.subtext {
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 40px;
-}
-
-/* إعدادات الأزرار */
-.button-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.button {
-    background-color: #ff3e3e;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    width: 200px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.button:hover {
-    background-color: #ff5e5e;
-    transform: translateY(-2px);
-}
-
-/* إعدادات نظام النقاط */
-h3 {
-    margin-top: 30px;
-    font-size: 1.5rem;
-}
-
-#points {
-    color: #ff3e3e;
-}
-
-/* إعدادات الفوتر */
-.footer {
-    background-color: #262626;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* إعدادات الصورة */
-.logo {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-.info-section {
-    text-align: center;
-    margin-top: 30px;
-}
-
-input[type="text"] {
+.bots-list ul li {
+    background: #efefef;
+    margin-bottom: 10px;
     padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    margin-bottom: 20px;
-    border: 1px solid #ff3e3e;
     border-radius: 5px;
 }
 
-/* شاشة صغيرة */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
+.bots-list ul li .actions {
+    margin-top: 10px;
+}
 
-    .button {
-        font-size: 1rem;
-        width: 100%;
-    }
+.bots-list ul li .actions .btn {
+    margin-right: 10px;
 }
