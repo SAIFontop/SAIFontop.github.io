@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('/api/bots');
             const bots = await response.json();
-
             myBotsList.innerHTML = ''; // مسح القائمة الحالية
+
             bots.forEach(bot => {
                 const botItem = document.createElement('li');
                 botItem.innerHTML = `
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // إضافة بوت جديد عبر API
+    // إضافة بوت جديد
     createBotBtn.addEventListener('click', async () => {
         const botName = prompt('أدخل اسم البوت الجديد:');
         if (botName) {
