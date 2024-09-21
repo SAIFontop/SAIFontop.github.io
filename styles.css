@@ -40,54 +40,6 @@ section {
     color: white;
 }
 
-section#logo-section {
-    padding: 40px;
-    text-align: center;
-}
-
-#chat-box {
-    margin-top: 20px;
-}
-
-#messages {
-    border: 1px solid #333;
-    padding: 10px;
-    height: 200px;
-    overflow-y: auto;
-    background-color: #fff;
-}
-
-#user-input {
-    width: 70%;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-button {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#logo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-#logo-container img {
-    margin: 2px;
-    border: 1px solid #333;
-}
-
-input[type="file"], button {
-    margin: 10px 0;
-    padding: 10px;
-}
-
 footer {
     background-color: #222;
     color: white;
