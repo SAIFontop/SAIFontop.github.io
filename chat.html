@@ -6,37 +6,34 @@
     <title>الشات الذكي</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h1><i class="fas fa-robot"></i> Discord AI Bots</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="chat.html" class="active">الشات</a></li>
-                    <li><a href="rules.html">القوانين</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="sidebar">
+        <h2>القائمة</h2>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="chat.html" class="active"><i class="fas fa-comments"></i> الشات</a></li>
+            <li><a href="rules.html"><i class="fas fa-file-alt"></i> القوانين</a></li>
+        </ul>
+    </div>
 
-    <section id="chat-section" class="chat-section">
-        <div class="chat-container">
-            <div class="messages" id="messages"></div>
-            <div class="chat-input">
-                <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
-                <button onclick="sendMessage()">إرسال</button>
-            </div>
-        </div>
-    </section>
+    <div class="main-content">
+        <header>
+            <h1>الشات الذكي</h1>
+        </header>
 
-    <footer>
-        <p>&copy; 2024 موقع الذكاء الاصطناعي لبوتات Discord</p>
-    </footer>
+        <section id="chat-section" class="chat-section">
+            <div class="chat-container">
+                <div class="messages" id="messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
+                    <button onclick="sendMessage()">إرسال</button>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="chat.js"></script>
 
