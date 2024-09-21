@@ -1,27 +1,38 @@
-const messagesDiv = document.getElementById('messages');
-const userInput = document.getElementById('user-input');
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-function sendMessage() {
-    const message = userInput.value;
-    if (message.trim() === '') return;
+    <header>
+        <h1>الشات الذكي</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="chat.html">الشات</a></li>
+                <li><a href="rules.html">القوانين</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    addMessage('أنت', message);
-    userInput.value = '';
+    <section id="chat-section">
+        <h2>تفاعل مع الذكاء الاصطناعي</h2>
+        <div id="chat-box">
+            <div id="messages"></div>
+            <input type="text" id="user-input" placeholder="اكتب رسالتك هنا...">
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+    </section>
 
-    // محاكاة رد من الذكاء الاصطناعي
-    setTimeout(() => {
-        const response = generateResponse(message);
-        addMessage('الذكاء الاصطناعي', response);
-    }, 1000);
-}
+    <footer>
+        <p>&copy; 2024 موقع الذكاء الاصطناعي لبوتات Discord</p>
+    </footer>
 
-function addMessage(sender, message) {
-    const newMessage = document.createElement('div');
-    newMessage.textContent = `${sender}: ${message}`;
-    messagesDiv.appendChild(newMessage);
-}
+    <script src="chat.js"></script>
 
-function generateResponse(message) {
-    // هنا يمكن إضافة ذكاء اصطناعي حقيقي لاحقًا
-    return 'هذا رد افتراضي للرسالة: ' + message;
-}
+</body>
+</html>
