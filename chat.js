@@ -1,5 +1,4 @@
 const messagesDiv = document.getElementById('messages');
-const developerMessagesDiv = document.getElementById('developer-messages');
 const userInput = document.getElementById('user-input');
 
 function sendMessage() {
@@ -9,12 +8,9 @@ function sendMessage() {
     addMessage('أنت', message, 'user');
     userInput.value = '';
 
-    // Simulate AI response after a short delay
     setTimeout(() => {
         const botResponse = generateResponse(message);
         addMessage('الذكاء الاصطناعي', botResponse, 'bot');
-        // إضافة رد المطور
-        addDeveloperResponse('ملاحظة المطور: تم التفاعل مع الرسالة.');
     }, 1000);
 }
 
@@ -34,16 +30,9 @@ function addMessage(sender, message, type) {
     messageDiv.appendChild(messageContentDiv);
     messagesDiv.appendChild(messageDiv);
 
-    // Scroll to the bottom of the messages div
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-function addDeveloperResponse(message) {
-    const devMessageDiv = document.createElement('div');
-    devMessageDiv.textContent = message;
-    developerMessagesDiv.appendChild(devMessageDiv);
-}
-
 function generateResponse(message) {
-    return 'رد الذكاء الاصطناعي على رسالتك: ' + message;
+    return 'رد الذكاء الاصطناعي: ' + message;
 }
