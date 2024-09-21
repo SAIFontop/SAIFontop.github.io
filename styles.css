@@ -1,81 +1,59 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #5865F2;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-.logo {
-    width: 100px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-h1 {
-    margin: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #2c2c2c;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #5865F2;
-    color: white;
-    padding: 15px 30px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.section {
-    margin: 20px 0;
-}
-
-footer {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
+    text-align: center;
 }
 
-.bots-list ul {
-    list-style: none;
+nav ul {
+    list-style-type: none;
     padding: 0;
 }
 
-.bots-list ul li {
-    background: #444;
-    margin-bottom: 10px;
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-.bots-list ul li .actions {
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+#chat-box {
+    margin-top: 20px;
+}
+
+#messages {
+    border: 1px solid #333;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+#user-input {
+    width: 70%;
+    padding: 10px;
     margin-top: 10px;
 }
 
-.bots-list ul li .actions .btn {
-    margin-right: 10px;
+button {
     padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
