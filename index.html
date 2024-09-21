@@ -3,38 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الذكاء الاصطناعي لبوتات Discord</title>
+    <title>الصفحة الرئيسية</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h1><i class="fas fa-robot"></i> Discord AI Bots</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">الرئيسية</a></li>
-                    <li><a href="chat.html">الشات</a></li>
-                    <li><a href="rules.html">القوانين</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="sidebar">
+        <h2>القائمة</h2>
+        <ul>
+            <li><a href="#" onclick="navigateTo('index')"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#" onclick="navigateTo('chat')"><i class="fas fa-comments"></i> الشات</a></li>
+            <li><a href="#" onclick="navigateTo('rules')"><i class="fas fa-file-alt"></i> القوانين</a></li>
+        </ul>
+    </div>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h2>أهلاً بك في موقع الذكاء الاصطناعي لبوتات Discord</h2>
-            <p>استخدم الذكاء الاصطناعي لتحسين تجربة المستخدمين في سيرفرك على Discord!</p>
-            <a href="chat.html" class="btn">ابدأ التفاعل الآن <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </section>
+    <div class="main-content">
+        <header>
+            <h1>مرحبًا بكم في موقع الشات الذكي</h1>
+            <p>تفاعل مع الذكاء الاصطناعي في أي وقت وأي مكان</p>
+        </header>
 
-    <footer>
-        <p>&copy; 2024 موقع الذكاء الاصطناعي لبوتات Discord</p>
-    </footer>
+        <footer>
+            <p>انضم إلى <a href="https://discord.gg/c91" target="_blank">خادمنا على Discord</a></p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
 
 </body>
 </html>
