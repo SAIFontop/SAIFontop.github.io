@@ -1,97 +1,171 @@
-/* الخط الأساسي */
+/* إعداد الخط */
 body {
     font-family: 'Tajawal', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #f4f4f4;
-    color: #333;
+    display: flex;
 }
 
-/* تصميم التنقل */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #4A63E7;
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
     color: white;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .logo h1 {
+.sidebar h2 {
+    margin-top: 0;
     font-size: 24px;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
-.navbar nav ul {
+.sidebar ul {
     list-style: none;
-    display: flex;
-    margin: 0;
     padding: 0;
 }
 
-.navbar nav ul li {
-    margin-left: 20px;
-}
-
-.navbar nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    padding: 8px 15px;
-    transition: background-color 0.3s;
-}
-
-.navbar nav ul li a:hover,
-.navbar nav ul li a.active {
-    background-color: #333;
-    border-radius: 5px;
-}
-
-/* تحسين قسم البطل (Hero Section) */
-.hero-section {
-    height: 90vh;
-    background-color: #4A63E7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.hero-content h2 {
-    font-size: 36px;
+.sidebar ul li {
     margin-bottom: 20px;
 }
 
-.hero-content p {
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
     font-size: 18px;
-    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
 }
 
-.hero-content .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #fff;
-    color: #4A63E7;
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #4A63E7;
+    padding: 10px;
     border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
     transition: background-color 0.3s;
 }
 
-.hero-content .btn:hover {
-    background-color: #333;
-    color: #fff;
+/* المحتوى الرئيسي */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
 }
 
-/* تنسيق الفوتر */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
+header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* تنسيق قسم الشات */
+.chat-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    height: calc(100vh - 100px);
+}
+
+.chat-container {
     width: 100%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.developer-responses {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 250px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.developer-responses h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.messages {
+    height: 400px;
+    padding: 20px;
+    overflow-y: scroll;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #4A63E7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #333;
+}
+
+/* تصميم الرسائل */
+.message {
+    margin-bottom: 10px;
+}
+
+.message .user {
+    font-weight: bold;
+    color: #4A63E7;
+}
+
+.message .bot {
+    font-weight: bold;
+    color: #333;
+}
+
+.message-content {
+    padding: 10px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    margin-top: 5px;
+    word-wrap: break-word;
+    max-width: 70%;
+}
+
+.user-message .message-content {
+    background-color: #d1e7ff;
+    margin-left: auto;
+    text-align: right;
+}
+
+.bot-message .message-content {
+    background-color: #f1f1f1;
 }
