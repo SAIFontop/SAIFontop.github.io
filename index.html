@@ -12,9 +12,9 @@
         <h1>مرحبًا بك في موقع الذكاء الاصطناعي لبوتات Discord</h1>
         <nav>
             <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#chat-section">الشات</a></li>
-                <li><a href="#rules-section">القوانين</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="chat.html">الشات</a></li>
+                <li><a href="rules.html">القوانين</a></li>
             </ul>
         </nav>
     </header>
@@ -24,80 +24,9 @@
         <p>هذا الموقع يتيح لك التفاعل مع بوتات ذكاء اصطناعي متقدمة تقوم بتسهيل حياتك على Discord!</p>
     </section>
 
-    <!-- قسم الشات -->
-    <section id="chat-section">
-        <h2>الشات الذكي</h2>
-        <div id="chat-box">
-            <div id="messages"></div>
-            <input type="text" id="user-input" placeholder="اكتب رسالتك هنا...">
-            <button onclick="sendMessage()">إرسال</button>
-        </div>
-    </section>
-
-    <!-- قسم القوانين -->
-    <section id="rules-section">
-        <h2>قوانين استخدام الموقع</h2>
-        <ul>
-            <li>يرجى الالتزام بالأخلاق العامة في المحادثة.</li>
-            <li>عدم الإساءة أو التحدث بطريقة غير لائقة.</li>
-            <li>الرجاء احترام الآخرين والامتناع عن التهجم.</li>
-        </ul>
-    </section>
-
-    <!-- تقسيم اللوغو -->
-    <section id="logo-section">
-        <h2>تقسيم اللوغو إلى أجزاء</h2>
-        <input type="file" id="logo-input" accept="image/*" />
-        <button onclick="splitLogo()">تقسيم اللوغو</button>
-        <div id="logo-container"></div>
-    </section>
-
     <footer>
         <p>&copy; 2024 موقع الذكاء الاصطناعي لبوتات Discord</p>
     </footer>
 
-    <script>
-        // chat.js code
-        const messagesDiv = document.getElementById('messages');
-        const userInput = document.getElementById('user-input');
-
-        function sendMessage() {
-            const message = userInput.value;
-            if (message.trim() === '') return;
-
-            addMessage('أنت', message);
-            userInput.value = '';
-
-            setTimeout(() => {
-                const response = generateResponse(message);
-                addMessage('الذكاء الاصطناعي', response);
-            }, 1000);
-        }
-
-        function addMessage(sender, message) {
-            const newMessage = document.createElement('div');
-            newMessage.textContent = `${sender}: ${message}`;
-            messagesDiv.appendChild(newMessage);
-        }
-
-        function generateResponse(message) {
-            return 'هذا رد افتراضي للرسالة: ' + message;
-        }
-
-        // logo splitting code
-        function splitLogo() {
-            const fileInput = document.getElementById('logo-input');
-            const logoContainer = document.getElementById('logo-container');
-            
-            if (!fileInput.files || !fileInput.files[0]) {
-                alert('يرجى رفع صورة أولا');
-                return;
-            }
-
-            const file = fileInput.files[0];
-            const img = new Image();
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                img.src = e.target.result;
-                img.onload
+</body>
+</html>
