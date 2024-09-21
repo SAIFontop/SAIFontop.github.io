@@ -3,51 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقسيم اللوغو</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        #logo-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        #logo-container img {
-            margin: 2px;
-            border: 1px solid #333;
-        }
-
-        input[type="file"], button {
-            margin: 10px 0;
-            padding: 10px;
-        }
-    </style>
+    <title>موقع الذكاء الاصطناعي لبوتات Discord</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>تقسيم اللوغو إلى أجزاء</h1>
+        <h1>مرحبًا بك في موقع الذكاء الاصطناعي لبوتات Discord</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#chat-section">الشات</a></li>
+                <li><a href="#rules-section">القوانين</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <section id="home">
+        <h2>الذكاء الاصطناعي لبوتات Discord</h2>
+        <p>هذا الموقع يتيح لك التفاعل مع بوتات ذكاء اصطناعي متقدمة تقوم بتسهيل حياتك على Discord!</p>
+    </section>
+
+    <!-- قسم الشات -->
+    <section id="chat-section">
+        <h2>الشات الذكي</h2>
+        <div id="chat-box">
+            <div id="messages"></div>
+            <input type="text" id="user-input" placeholder="اكتب رسالتك هنا...">
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+    </section>
+
+    <!-- قسم القوانين -->
+    <section id="rules-section">
+        <h2>قوانين استخدام الموقع</h2>
+        <ul>
+            <li>يرجى الالتزام بالأخلاق العامة في المحادثة.</li>
+            <li>عدم الإساءة أو التحدث بطريقة غير لائقة.</li>
+            <li>الرجاء احترام الآخرين والامتناع عن التهجم.</li>
+        </ul>
+    </section>
+
+    <!-- تقسيم اللوغو -->
     <section id="logo-section">
+        <h2>تقسيم اللوغو إلى أجزاء</h2>
         <input type="file" id="logo-input" accept="image/*" />
         <button onclick="splitLogo()">تقسيم اللوغو</button>
         <div id="logo-container"></div>
@@ -58,6 +57,34 @@
     </footer>
 
     <script>
+        // chat.js code
+        const messagesDiv = document.getElementById('messages');
+        const userInput = document.getElementById('user-input');
+
+        function sendMessage() {
+            const message = userInput.value;
+            if (message.trim() === '') return;
+
+            addMessage('أنت', message);
+            userInput.value = '';
+
+            setTimeout(() => {
+                const response = generateResponse(message);
+                addMessage('الذكاء الاصطناعي', response);
+            }, 1000);
+        }
+
+        function addMessage(sender, message) {
+            const newMessage = document.createElement('div');
+            newMessage.textContent = `${sender}: ${message}`;
+            messagesDiv.appendChild(newMessage);
+        }
+
+        function generateResponse(message) {
+            return 'هذا رد افتراضي للرسالة: ' + message;
+        }
+
+        // logo splitting code
         function splitLogo() {
             const fileInput = document.getElementById('logo-input');
             const logoContainer = document.getElementById('logo-container');
@@ -73,35 +100,4 @@
 
             reader.onload = function(e) {
                 img.src = e.target.result;
-                img.onload = function() {
-                    const imgWidth = img.width;
-                    const imgHeight = img.height;
-                    const numOfRows = 4; 
-                    const numOfCols = 4; 
-                    const pieceWidth = imgWidth / numOfCols;
-                    const pieceHeight = imgHeight / numOfRows;
-
-                    logoContainer.innerHTML = '';
-
-                    for (let y = 0; y < numOfRows; y++) {
-                        for (let x = 0; x < numOfCols; x++) {
-                            const canvas = document.createElement('canvas');
-                            canvas.width = pieceWidth;
-                            canvas.height = pieceHeight;
-                            const ctx = canvas.getContext('2d');
-
-                            ctx.drawImage(img, x * pieceWidth, y * pieceHeight, pieceWidth, pieceHeight, 0, 0, pieceWidth, pieceHeight);
-                            const imgPiece = canvas.toDataURL();
-                            const imgElement = document.createElement('img');
-                            imgElement.src = imgPiece;
-                            logoContainer.appendChild(imgElement);
-                        }
-                    }
-                };
-            };
-
-            reader.readAsDataURL(file);
-        }
-    </script>
-</body>
-</html>
+                img.onload
