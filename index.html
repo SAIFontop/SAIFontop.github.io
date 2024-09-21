@@ -3,28 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>تقسيم اللوغو</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #logo-container img {
+            margin: 2px;
+            border: 1px solid #333;
+        }
+
+        input[type="file"], button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>مرحبًا بك في موقع الذكاء الاصطناعي لبوتات Discord</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="chat.html">الشات</a></li>
-                <li><a href="rules.html">القوانين</a></li>
-            </ul>
-        </nav>
+        <h1>تقسيم اللوغو إلى أجزاء</h1>
     </header>
-    
-    <section id="welcome">
-        <h2>بوتات Discord الذكية لك</h2>
-        <p>هذا الموقع يتيح لك التفاعل مع بوتات ذكاء اصطناعي متقدمة تقوم بتسهيل حياتك على Discord!</p>
+
+    <section id="logo-section">
+        <input type="file" id="logo-input" accept="image/*" />
+        <button onclick="splitLogo()">تقسيم اللوغو</button>
+        <div id="logo-container"></div>
     </section>
 
     <footer>
         <p>&copy; 2024 موقع الذكاء الاصطناعي لبوتات Discord</p>
     </footer>
+
+    <script>
+        function splitLogo() {
+            const fileInput = document.getElementById('logo-input');
+            const logoContainer = document.getElementById('logo-container');
+            
+            if (!fileInput.files || !fileInput.files[0]) {
+                alert('يرجى رفع صورة أولا');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const img = new Image();
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                img.src = e.target.result;
+                img.onload = function() {
+                    const imgWidth = img.width;
+                    const imgHeight = img.height;
+                    const numOfRows = 4; 
+                    const numOfCols = 4; 
+                    const pieceWidth = imgWidth / numOfCols;
+                    const pieceHeight = imgHeight / numOfRows;
+
+                    logoContainer.innerHTML = '';
+
+                    for (let y = 0; y < numOfRows; y++) {
+                        for (let x = 0; x < numOfCols; x++) {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = pieceWidth;
+                            canvas.height = pieceHeight;
+                            const ctx = canvas.getContext('2d');
+
+                            ctx.drawImage(img, x * pieceWidth, y * pieceHeight, pieceWidth, pieceHeight, 0, 0, pieceWidth, pieceHeight);
+                            const imgPiece = canvas.toDataURL();
+                            const imgElement = document.createElement('img');
+                            imgElement.src = imgPiece;
+                            logoContainer.appendChild(imgElement);
+                        }
+                    }
+                };
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
 </body>
 </html>
