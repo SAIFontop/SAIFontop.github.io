@@ -1,40 +1,45 @@
-const messagesDiv = document.getElementById('messages');
-const userInput = document.getElementById('user-input');
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشات الذكي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
 
-function sendMessage() {
-    const message = userInput.value.trim();
-    if (!message) return;
+    <div class="sidebar">
+        <h2>القائمة</h2>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="chat.html" class="active"><i class="fas fa-comments"></i> الشات</a></li>
+            <li><a href="rules.html"><i class="fas fa-file-alt"></i> القوانين</a></li>
+        </ul>
+    </div>
 
-    addMessage('أنت', message, 'user');
-    userInput.value = '';
+    <div class="main-content">
+        <header>
+            <h1>الشات الذكي</h1>
+        </header>
 
-    // Simulate AI response after a short delay
-    setTimeout(() => {
-        const botResponse = generateResponse(message);
-        addMessage('الذكاء الاصطناعي', botResponse, 'bot');
-    }, 1000);
-}
+        <section id="chat-section" class="chat-section">
+            <div class="chat-container">
+                <div class="developer-responses">
+                    <h3>ردود المطور</h3>
+                    <div id="developer-messages"></div>
+                </div>
+                <div class="messages" id="messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
+                    <button onclick="sendMessage()">إرسال</button>
+                </div>
+            </div>
+        </section>
+    </div>
 
-function addMessage(sender, message, type) {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message', `${type}-message`);
+    <script src="chat.js"></script>
 
-    const senderSpan = document.createElement('span');
-    senderSpan.classList.add(type);
-    senderSpan.textContent = sender;
-
-    const messageContentDiv = document.createElement('div');
-    messageContentDiv.classList.add('message-content');
-    messageContentDiv.textContent = message;
-
-    messageDiv.appendChild(senderSpan);
-    messageDiv.appendChild(messageContentDiv);
-    messagesDiv.appendChild(messageDiv);
-
-    // Scroll to the bottom of the messages div
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
-
-function generateResponse(message) {
-    return 'رد الذكاء الاصطناعي على رسالتك: ' + message;
-}
+</body>
+</html>
