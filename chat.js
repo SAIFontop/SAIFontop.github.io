@@ -28,7 +28,7 @@ function addMessage(message, sender) {
 }
 
 async function getAIResponse(message) {
-    const apiKey = 'YOUR_OPENAI_API_KEY'; // ضع مفتاح الـ API هنا
+    const apiKey = 'sk-1k4aQirG66ZkAgYcdhILkOUsxw902aZCE0vkjcEwauT3BlbkFJtWDAbTzxAHqgyhWAZ9L53PRDLZuzTXUVJfcq-w3Q8A'; // ضع مفتاح الـ API هنا
     const response = await fetch('https://api.openai.com/v1/completions', {
         method: 'POST',
         headers: {
