@@ -1,75 +1,60 @@
-// قم بتغيير هذا المفتاح الخاص بـ OpenAI API Key إلى المفتاح الخاص بك
-const apiKey = "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"; 
+document.getElementById("sendBtn").addEventListener("click", function() {
+    sendMessage();
+});
 
-// الدردشة الحالية
-let currentChat = [];
-
-// دالة لإضافة الرسائل إلى الدردشة
-function addMessageToChat(sender, message) {
-    const chats = document.getElementById("chats");
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message");
-    if (sender === "user") {
-        messageDiv.classList.add("user-message");
-    } else {
-        messageDiv.classList.add("bot-message");
-    }
-    messageDiv.textContent = message;
-    chats.appendChild(messageDiv);
-    chats.scrollTop = chats.scrollHeight; // قم بالتمرير إلى أسفل الدردشة تلقائيًا
-}
-
-// دالة لإرسال الرسالة إلى OpenAI API
-function sendMessageToAPI(message) {
-    const url = "https://api.openai.com/v1/completions";
-    const data = {
-        model: "text-davinci-003",
-        prompt: message,
-        max_tokens: 150
-    };
-
-    fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}` // تأكد من وجود "Bearer" قبل الـ API Key
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        const botMessage = data.choices && data.choices[0] ? data.choices[0].text.trim() : "No response";
-        addMessageToChat("bot", botMessage);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        addMessageToChat("bot", "Error: Unable to get a response from the server.");
-    });
-}
-
-// دالة للتعامل مع إدخال المستخدم
-function handleUserMessage() {
-    const userInput = document.getElementById("userInput");
-    const userMessage = userInput.value.trim();
-    if (userMessage === "") return;
-
-    // أضف الرسالة إلى الدردشة
-    addMessageToChat("user", userMessage);
-
-    // أرسل الرسالة إلى OpenAI API
-    sendMessageToAPI(userMessage);
-
-    // مسح حقل الإدخال بعد الإرسال
-    userInput.value = "";
-}
-
-// عند الضغط على زر الإرسال
-document.getElementById("sendButton").addEventListener("click", handleUserMessage);
-
-// عند الضغط على "Enter" في حقل الإدخال
-document.getElementById("userInput").addEventListener("keydown", function (event) {
+document.getElementById("messageInput").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        handleUserMessage();
+        sendMessage();
     }
 });
 
+function sendMessage() {
+    const userMessage = document.getElementById("messageInput").value;
+    if (userMessage.trim() === "") {
+        return;
+    }
+
+    // عرض الرسالة في واجهة المستخدم
+    addMessageToChatBox("أنت", userMessage);
+
+    // إرسال الرسالة إلى API
+    fetchOpenAIResponse(userMessage);
+
+    // تفريغ الحقل بعد الإرسال
+    document.getElementById("messageInput").value = "";
+}
+
+function addMessageToChatBox(sender, message) {
+    const chatBox = document.getElementById("chatBox");
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message");
+    messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function fetchOpenAIResponse(message) {
+    const apiKey = "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"; // ضع المفتاح الخاص بك هنا
+    const apiUrl = "https://api.openai.com/v1/chat/completions";
+
+    fetch(apiUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: message }]
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const botResponse = data.choices[0].message.content;
+        addMessageToChatBox("الدردشة", botResponse);
+    })
+    .catch(error => {
+        addMessageToChatBox("خطأ", "Error: Unable to get a response from the server.");
+        console.error("Error:", error);
+    });
+}
