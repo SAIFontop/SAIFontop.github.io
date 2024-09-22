@@ -34,5 +34,5 @@ function addMessage(sender, message, type) {
 }
 
 function generateResponse(message) {
-    return 'رد الذكاء الاصطناعي على رسالتك: ' + message;
+    return 'رد الذكاء الاصطناعي: ' + message;
 }
