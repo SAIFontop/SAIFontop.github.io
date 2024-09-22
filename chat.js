@@ -5,12 +5,12 @@ function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
 
-    addMessage('أنت', message, 'user');
+    addMessage('You', message, 'user');
     userInput.value = '';
 
     setTimeout(() => {
         const botResponse = generateResponse(message);
-        addMessage('الذكاء الاصطناعي', botResponse, 'bot');
+        addMessage('AI', botResponse, 'bot');
     }, 1000);
 }
 
@@ -34,5 +34,5 @@ function addMessage(sender, message, type) {
 }
 
 function generateResponse(message) {
-    return `تلقيت رسالتك: ${message}`;
+    return `Received your message: ${message}`;
 }
