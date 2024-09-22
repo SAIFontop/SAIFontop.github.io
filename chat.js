@@ -1,36 +1,52 @@
-const messagesDiv = document.getElementById("messages");
-const userInput = document.getElementById("user-input");
+let currentChat = 'chat1';
+const messagesDiv = document.getElementById('messages');
+const userInput = document.getElementById('user-input');
 
-function sendMessage() {
-  const message = userInput.value.trim();
-  if (!message) return;
+const chats = {
+    chat1: [],
+    chat2: []
+};
 
-  addMessage('أنت', message, 'user');
-  userInput.value = '';
-
-  setTimeout(() => {
-    const botResponse = generateResponse(message);
-    addMessage('الذكاء الاصطناعي', botResponse, 'bot');
-  }, 1000);
+function openChat(chatId) {
+    currentChat = chatId;
+    renderMessages();
 }
 
-function addMessage(sender, message, type) {
-  const messageDiv = document.createElement('div');
-  messageDiv.classList.add('message', type);
+function sendMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
 
-  const senderSpan = document.createElement('span');
-  senderSpan.textContent = sender;
+    chats[currentChat].push({ sender: 'أنت', message });
+    userInput.value = '';
+    renderMessages();
 
-  const messageContentDiv = document.createElement('div');
-  messageContentDiv.textContent = message;
+    setTimeout(() => {
+        const botResponse = generateResponse(message);
+        chats[currentChat].push({ sender: 'الذكاء الاصطناعي', message: botResponse });
+        renderMessages();
+    }, 1000);
+}
 
-  messageDiv.appendChild(senderSpan);
-  messageDiv.appendChild(messageContentDiv);
-  messagesDiv.appendChild(messageDiv);
+function renderMessages() {
+    messagesDiv.innerHTML = '';
+    chats[currentChat].forEach(msg => {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
 
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        const senderSpan = document.createElement('span');
+        senderSpan.classList.add(msg.sender === 'أنت' ? 'user' : 'bot');
+        senderSpan.textContent = msg.sender;
+
+        const messageContentDiv = document.createElement('div');
+        messageContentDiv.classList.add('message-content');
+        messageContentDiv.textContent = msg.message;
+
+        messageDiv.appendChild(senderSpan);
+        messageDiv.appendChild(messageContentDiv);
+        messagesDiv.appendChild(messageDiv);
+    });
 }
 
 function generateResponse(message) {
-  return `رد الذكاء الاصطناعي: ${message}`;
+    return `رد الذكاء الاصطناعي: ${message}`;
 }
