@@ -1,99 +1,133 @@
-/* تنسيق عام */
+/* إعدادات أساسية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Tajawal', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* خلفية سوداء */
-    color: #fff;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* جعل المحتوى في المنتصف */
-    align-items: center;
+  font-family: 'Tajawal', sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-/* الشات */
-.chat-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* استخدام كامل الارتفاع */
+/* تنسيق الصفحة الرئيسية */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-.chat-container {
-    width: 100%; /* تكبير العرض إلى 100% */
-    max-width: 1100px; /* تحديد عرض أقصى أكبر */
-    background-color: #2e2e2e;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 80vh; /* تكبير الارتفاع إلى 80% من ارتفاع الشاشة */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.messages {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #1e1e1e;
-    border-radius: 10px;
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.message {
-    margin-bottom: 10px;
+a {
+  color: #4A63E7;
+  text-decoration: none;
 }
 
-.message .user {
-    color: #4A63E7;
-    font-weight: bold;
+a:hover {
+  text-decoration: underline;
 }
 
-.message .bot {
-    color: #e0e0e0;
-    font-weight: bold;
+/* تصميم القوائم */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.message-content {
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #333;
-    color: white;
-    word-wrap: break-word;
+.menu a {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #333;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
-/* حقل الإدخال الحديث */
+.menu a:hover {
+  background-color: #4A63E7;
+}
+
+/* تنسيق الشات */
+.chat-box {
+  width: 400px;
+  height: 600px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.chat-header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.chat-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #2A2A2A;
+}
+
+.chat-message {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
 .chat-input {
-    display: flex;
-    padding: 15px; /* تكبير الحواف */
-    background-color: #2c2c2c;
-    border-top: 1px solid #444;
-    justify-content: space-between;
-    width: 100%; /* استخدام عرض الشات بالكامل */
-    border-radius: 0 0 15px 15px; /* تقويس أسفل الشات */
+  display: flex;
+  align-items: center;
 }
 
-.chat-input input[type="text"] {
-    flex-grow: 1;
-    padding: 15px; /* تكبير حقل الإدخال */
-    background-color: #3e3e3e;
-    color: white;
-    border: none;
-    border-radius: 50px; /* شكل مستدير لحقل الإدخال */
-    margin-right: 10px;
-    padding-left: 20px;
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .chat-input button {
-    padding: 15px 35px; /* تكبير زر الإرسال */
-    background-color: #4A63E7;
-    color: white;
-    border: none;
-    border-radius: 50px; /* زر إرسال مستدير */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: #4A63E7;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }
 
 .chat-input button:hover {
-    background-color: #333;
+  background-color: #3950B6;
+}
+
+/* تخصيص الرسائل */
+.message.user {
+  background-color: #4A63E7;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #333;
+  text-align: left;
 }
