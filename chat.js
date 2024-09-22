@@ -1,33 +1,46 @@
-document.getElementById('sendMessageBtn').addEventListener('click', sendMessage);
+const messagesDiv = document.querySelector('.chat-box');
+const userInput = document.querySelector('.message-input input');
+const sendButton = document.querySelector('.btn-send');
 
-// تحميل الرسائل المحفوظة عند تحميل الصفحة
-window.onload = function() {
-    const savedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    savedMessages.forEach(message => {
-        displayMessage(message);
-    });
-};
+sendButton.addEventListener('click', async () => {
+    const userMessage = userInput.value;
+    if (!userMessage) return;
 
-function sendMessage() {
-    const messageInput = document.getElementById('messageInput');
-    const messageText = messageInput.value.trim();
-    
-    if (messageText) {
-        const message = { text: messageText };
-        displayMessage(message);
+    // عرض الرسالة في الدردشة
+    addMessage(userMessage, 'user');
 
-        // حفظ الرسالة في localStorage
-        let chatMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-        chatMessages.push(message);
-        localStorage.setItem('chatMessages', JSON.stringify(chatMessages));
+    // تنظيف حقل الإدخال
+    userInput.value = '';
 
-        messageInput.value = ''; // تفريغ حقل الإدخال
-    }
+    // استدعاء الذكاء الاصطناعي من OpenAI API
+    const botResponse = await getAIResponse(userMessage);
+
+    // عرض الرد من الذكاء الاصطناعي
+    addMessage(botResponse, 'bot');
+});
+
+function addMessage(message, sender) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageElement.textContent = message;
+    messagesDiv.appendChild(messageElement);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // للتمرير لأسفل
 }
 
-function displayMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('user-message');
-    messageDiv.textContent = message.text;
-    document.getElementById('chatBox').appendChild(messageDiv);
+async function getAIResponse(message) {
+    const apiKey = 'YOUR_OPENAI_API_KEY'; // ضع مفتاح الـ API هنا
+    const response = await fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'text-davinci-003', // أو يمكنك استخدام نموذج آخر
+            prompt: message,
+            max_tokens: 150
+        })
+    });
+    const data = await response.json();
+    return data.choices[0].text.trim();
 }
