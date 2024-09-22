@@ -45,7 +45,8 @@ body {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* إضافة */
+    justify-content: flex-end; /* يجعل الشات في الأسفل */
+    height: 100vh;
 }
 
 /* الشات */
@@ -54,14 +55,12 @@ body {
     justify-content: center;
     align-items: flex-end; /* الشات في الأسفل */
     height: 100%; /* استخدام كامل الارتفاع */
-    padding-bottom: 20px; /* إضافة بعض المسافة في الأسفل */
+    padding-bottom: 20px; /* مسافة بين الشات وأسفل الصفحة */
 }
 
 .chat-container {
-    width: 80%;
-    max-height: 70%; /* التحكم في ارتفاع الشات */
-    display: flex;
-    flex-direction: column;
+    width: 100%; /* استخدام كامل العرض */
+    max-width: 1200px; /* تحديد أقصى عرض للشات */
     background-color: #2e2e2e;
     border-radius: 10px;
     overflow: hidden;
@@ -73,8 +72,8 @@ body {
     padding: 20px;
     overflow-y: auto;
     background-color: #1e1e1e;
-    margin-bottom: 20px;
     border-radius: 10px;
+    min-height: 300px; /* تحديد حد أدنى للارتفاع */
 }
 
 .message {
