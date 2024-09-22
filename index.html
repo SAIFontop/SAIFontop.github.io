@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord AI Bots - الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord AI Bots</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="sidebar">
-        <h2>القائمة</h2>
-        <ul>
-            <li><a href="index.html" class="active">الرئيسية</a></li>
-            <li><a href="chat.html">الشات</a></li>
-            <li><a href="rules.html">القوانين</a></li>
-        </ul>
+  <div class="container">
+    <div class="header">
+      <h1>Ask Discord AI Bots</h1>
+      <p>موثوق من قبل ملايين المستخدمين</p>
     </div>
-
-    <div class="main-content">
-        <header class="hero-section">
-            <h1>مرحبًا بكم في موقع Discord AI Bots</h1>
-            <p>استخدم الذكاء الاصطناعي لتحسين تجربة المستخدمين في سيرفرك</p>
-            <a href="chat.html" class="btn">ابدأ الآن</a>
-        </header>
-
-        <section class="features">
-            <div class="feature-item">
-                <h2>تفاعل فوري</h2>
-                <p>استمتع بتفاعل فوري مع البوتات لتحسين إدارتك.</p>
-            </div>
-            <div class="feature-item">
-                <h2>إدارة متقدمة</h2>
-                <p>قم بإدارة البوتات بسهولة وكفاءة باستخدام تقنيات الذكاء الاصطناعي.</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>انضم إلى <a href="https://discord.gg/c91" target="_blank">خادم Discord الخاص بنا</a></p>
-        </footer>
+    <div class="chat-box">
+      <div class="chat-header">
+        <p>الشات الذكي</p>
+      </div>
+      <div class="chat-body" id="messages">
+        <!-- رسائل الشات تظهر هنا -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." />
+        <button onclick="sendMessage()">إرسال</button>
+      </div>
     </div>
-
+  </div>
+  <script src="chat.js"></script>
 </body>
 </html>
