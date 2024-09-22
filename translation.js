@@ -1,22 +1,38 @@
+// تعريف النصوص باللغتين
 const translations = {
     ar: {
-        chat_title: 'الدردشة الذكي',
-        send_button: 'إرسال',
-        input_placeholder: 'اكتب رسالتك هنا...'
+        chatTitle: 'الدردشة الذكية',
+        placeholder: 'اكتب رسالتك هنا...',
+        sendButton: 'إرسال',
+        discordButton: 'انضم إلى ديسكورد'
     },
     en: {
-        chat_title: 'Smart Chat',
-        send_button: 'Send',
-        input_placeholder: 'Type your message here...'
+        chatTitle: 'Smart Chat',
+        placeholder: 'Type your message here...',
+        sendButton: 'Send',
+        discordButton: 'Join Discord'
     }
 };
 
-function switchLanguage(lang) {
-    document.querySelectorAll('[data-translate]').forEach(el => {
-        el.textContent = translations[lang][el.getAttribute('data-translate')];
-    });
+// عناصر الصفحة التي سيتم ترجمتها
+const chatTitle = document.querySelector('.chat-title');
+const messageInput = document.getElementById('messageInput');
+const sendMessageBtn = document.getElementById('sendMessageBtn');
+const discordBtn = document.querySelector('.discord-btn');
 
-    document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
-        el.placeholder = translations[lang][el.getAttribute('data-translate-placeholder')];
-    });
+// وظائف تغيير اللغة
+document.getElementById('ar').addEventListener('click', () => {
+    changeLanguage('ar');
+});
+
+document.getElementById('en').addEventListener('click', () => {
+    changeLanguage('en');
+});
+
+// وظيفة تغيير اللغة
+function changeLanguage(lang) {
+    chatTitle.textContent = translations[lang].chatTitle;
+    messageInput.placeholder = translations[lang].placeholder;
+    sendMessageBtn.textContent = translations[lang].sendButton;
+    discordBtn.textContent = translations[lang].discordButton;
 }
