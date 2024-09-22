@@ -3,35 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدردشة الذكية</title>
+    <title>الصفحة الرئيسية</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="logo.gif" alt="logo" class="logo">
-        <div class="language-switch">
-            <button id="ar" class="btn">العربية</button>
-            <button id="en" class="btn">English</button>
-        </div>
-    </header>
-
-    <div class="chat-container">
-        <h1 class="chat-title">الدردشة الذكية</h1>
-        <div class="chat-box" id="chatBox">
-            <!-- الرسائل سيتم عرضها هنا -->
-        </div>
-        <div class="message-input">
-            <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا...">
-            <button id="sendMessageBtn" class="btn-send">إرسال</button>
-        </div>
+    <div class="container">
+        <img src="logo.gif" alt="Logo" class="logo">
+        <h1>مرحباً بكم في الدردشة الذكية</h1>
+        <a href="chat.html" class="start-chat-btn">ابدأ الدردشة الآن</a>
     </div>
-
-    <!-- إضافة رابط الديسكورد -->
-    <div class="discord-link">
-        <a href="https://discord.gg/c91" target="_blank" class="discord-btn">انضم إلى ديسكورد</a>
-    </div>
-
-    <script src="chat.js"></script>
-    <script src="translate.js"></script> <!-- ملف الترجمة -->
+    <script src="translate.js"></script>
 </body>
 </html>
