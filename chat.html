@@ -25,6 +25,11 @@
 
         <section id="chat-section" class="chat-section">
             <div class="chat-container">
+                <div class="tabs">
+                    <button onclick="openChat('chat1')">دردشة 1</button>
+                    <button onclick="openChat('chat2')">دردشة 2</button>
+                    <button onclick="addNewChat()">إضافة دردشة جديدة</button>
+                </div>
                 <div class="messages" id="messages"></div>
                 <div class="chat-input">
                     <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
