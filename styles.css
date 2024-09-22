@@ -106,6 +106,8 @@ body {
     overflow-y: auto;
     background-color: #1e1e1e;
     margin-bottom: 20px;
+    height: 400px;
+    border-radius: 10px;
 }
 
 .message {
