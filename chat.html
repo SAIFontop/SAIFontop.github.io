@@ -11,9 +11,9 @@
     <div class="sidebar">
         <h2>القائمة</h2>
         <ul>
-            <li><a href="#" onclick="navigateTo('index')">الرئيسية</a></li>
-            <li><a href="#" onclick="navigateTo('chat')" class="active">الشات</a></li>
-            <li><a href="#" onclick="navigateTo('rules')">القوانين</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="chat.html" class="active">الشات</a></li>
+            <li><a href="rules.html">القوانين</a></li>
         </ul>
     </div>
 
@@ -23,19 +23,10 @@
         </header>
 
         <div class="chat-container">
-            <div class="right-panel">
-                <div class="tabs">
-                    <button onclick="openChat('chat1')">دردشة 1</button>
-                    <button onclick="openChat('chat2')">دردشة 2</button>
-                    <button onclick="addNewChat()">إضافة دردشة جديدة</button>
-                </div>
-            </div>
-            <div class="left-panel">
-                <div class="messages" id="messages"></div>
-                <div class="chat-input centered">
-                    <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
-                    <button onclick="sendMessage()">إرسال</button>
-                </div>
+            <div class="messages" id="messages"></div>
+            <div class="chat-input centered">
+                <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." autocomplete="off">
+                <button onclick="sendMessage()">إرسال</button>
             </div>
         </div>
     </div>
