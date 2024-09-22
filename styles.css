@@ -11,51 +11,6 @@ body {
     align-items: center;
 }
 
-/* القائمة الجانبية */
-.sidebar {
-    width: 250px;
-    background-color: #1e1e1e;
-    padding: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.sidebar ul li a.active {
-    background-color: #4A63E7;
-}
-
-/* تنسيق المحتوى الرئيسي */
-.main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* تمركز الشات في المنتصف */
-    align-items: center;
-    height: 100vh;
-    margin-left: 250px; /* مسافة من اليسار للابتعاد عن القائمة الجانبية */
-}
-
 /* الشات */
 .chat-layout {
     display: flex;
@@ -65,15 +20,15 @@ body {
 }
 
 .chat-container {
-    width: 90%; /* تكبير العرض إلى 90% */
-    max-width: 900px; /* تحديد عرض أقصى أكبر */
+    width: 100%; /* تكبير العرض إلى 100% */
+    max-width: 1100px; /* تحديد عرض أقصى أكبر */
     background-color: #2e2e2e;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    height: 70vh; /* تكبير الارتفاع إلى 70% من ارتفاع الشاشة */
+    height: 80vh; /* تكبير الارتفاع إلى 80% من ارتفاع الشاشة */
 }
 
 .messages {
@@ -82,7 +37,6 @@ body {
     overflow-y: auto;
     background-color: #1e1e1e;
     border-radius: 10px;
-    min-height: 400px; /* تحديد حد أدنى أكبر للارتفاع */
 }
 
 .message {
@@ -142,21 +96,4 @@ body {
 
 .chat-input button:hover {
     background-color: #333;
-}
-
-/* تحسينات إضافية */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #2e2e2e;
-    color: #aaa;
-}
-
-footer a {
-    color: #4A63E7;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
