@@ -18,18 +18,13 @@ body {
     padding: 20px;
 }
 
-.sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
 .sidebar ul {
     list-style: none;
     padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .sidebar ul li a {
@@ -54,71 +49,81 @@ body {
 }
 
 header h1 {
-    font-size: 48px;
+    font-size: 36px;
     color: white;
 }
 
-.hero-section {
-    background-color: #333;
-    padding: 100px 20px;
-    text-align: center;
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    color: #fff;
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.hero-text p {
-    font-size: 20px;
-    color: #bbb;
+.tabs {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #444;
 }
 
-.hero-text .btn {
-    padding: 15px 30px;
+.tabs button {
+    padding: 10px 20px;
     background-color: #4A63E7;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
-    display: inline-block;
 }
 
-.hero-text .btn:hover {
+.tabs button:hover {
     background-color: #333;
 }
 
-.features {
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.chat-input {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.feature-item {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 5px;
-    width: 30%;
-}
-
-.feature-item h2 {
-    color: #4A63E7;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #2c2c2c;
+}
+
+.chat-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: #333;
     color: white;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
-footer a {
-    color: #4A63E7;
-    text-decoration: none;
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #4A63E7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.chat-input button:hover {
+    background-color: #333;
 }
