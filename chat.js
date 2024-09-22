@@ -1,5 +1,5 @@
 // Chat functionality with OpenAI API integration
-const apiKey = "sk-1k4aQirG66ZkAgYcdhILkOUsxw902aZCE0vkjcEwauT3BlbkFJtWDAbTzxAHqgyhWAZ9L53PRDLZuzTXUVJfcq-w3Q8A";
+const apiKey = "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";
 
 document.getElementById("sendMessage").addEventListener("click", function() {
     const userMessage = document.getElementById("userMessage").value;
