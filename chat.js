@@ -1,35 +1,15 @@
-const sendMessageBtn = document.getElementById('sendMessageBtn');
-const messageInput = document.getElementById('messageInput');
-const chatBox = document.getElementById('chatBox');
-
-sendMessageBtn.addEventListener('click', () => {
-    sendMessage();
-});
-
-messageInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
+document.getElementById('sendMessageBtn').addEventListener('click', sendMessage);
 
 function sendMessage() {
-    const message = messageInput.value.trim();
-    if (message === "") return;
+    const messageInput = document.getElementById('messageInput');
+    const messageText = messageInput.value.trim();
+    
+    if (messageText) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('user-message');
+        messageDiv.textContent = messageText;
 
-    // إضافة رسالة المستخدم
-    const userMessage = document.createElement('div');
-    userMessage.classList.add('message', 'user-message');
-    userMessage.innerText = message;
-    chatBox.appendChild(userMessage);
-
-    messageInput.value = "";
-
-    // إضافة رد الذكاء الاصطناعي (مثال فقط)
-    setTimeout(() => {
-        const botMessage = document.createElement('div');
-        botMessage.classList.add('message', 'bot-message');
-        botMessage.innerText = "رد الذكاء الاصطناعي على رسالتك!";
-        chatBox.appendChild(botMessage);
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }, 1000);
+        document.getElementById('chatBox').appendChild(messageDiv);
+        messageInput.value = ''; // تفريغ حقل الإدخال
+    }
 }
