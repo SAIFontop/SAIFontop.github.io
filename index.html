@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام الدردشة الذكي - Smart Chat</title>
+    <title>الدردشة الذكية</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="translation.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="logo.gif" alt="Logo" class="logo">
-        </div>
-        <div class="language-switcher">
-            <button onclick="switchLanguage('ar')">العربية</button>
-            <button onclick="switchLanguage('en')">English</button>
+        <img src="logo.gif" alt="logo" class="logo">
+        <div class="language-switch">
+            <button id="ar" class="btn">العربية</button>
+            <button id="en" class="btn">English</button>
         </div>
     </header>
 
-    <div class="container">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2 data-translate="chat_title">الدردشة الذكي</h2>
-            </div>
-            <div class="messages" id="messages"></div>
-            <div class="input-container">
-                <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." data-translate-placeholder="input_placeholder">
-                <button onclick="sendMessage()" data-translate="send_button">إرسال</button>
-            </div>
+    <div class="chat-container">
+        <h1 class="chat-title">الدردشة الذكية</h1>
+        <div class="chat-box" id="chatBox">
+            <!-- الرسائل سيتم عرضها هنا -->
+        </div>
+        <div class="message-input">
+            <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا...">
+            <button id="sendMessageBtn" class="btn-send">إرسال</button>
         </div>
     </div>
 
