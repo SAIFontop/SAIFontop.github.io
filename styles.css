@@ -16,88 +16,74 @@ body {
   text-align: center;
 }
 
-/* تنسيق الصفحة الرئيسية */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 20px;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-a {
-  color: #4A63E7;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* تصميم القوائم */
-.menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.menu a {
-  margin: 10px 0;
-  padding: 10px 20px;
+.menu {
+  width: 20%;
   background-color: #333;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu ul li {
+  margin-bottom: 15px;
+}
+
+.menu ul li a {
   color: #fff;
-  font-size: 1.1rem;
-}
-
-.menu a:hover {
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
   background-color: #4A63E7;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
 }
 
-/* تنسيق الشات */
+.menu ul li a:hover {
+  background-color: #3950B6;
+}
+
+/* تصميم الشات */
 .chat-box {
-  width: 400px;
-  height: 600px;
+  width: 70%;
   background-color: #1E1E1E;
   border-radius: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
 }
 
 .chat-header {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .chat-body {
-  flex-grow: 1;
+  height: 400px;
   overflow-y: auto;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   background-color: #2A2A2A;
-}
-
-.chat-message {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #333;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .chat-input {
   display: flex;
-  align-items: center;
 }
 
 .chat-input input {
@@ -106,6 +92,7 @@ a:hover {
   border: none;
   border-radius: 5px;
   margin-right: 10px;
+  background-color: #fff;
 }
 
 .chat-input button {
@@ -121,7 +108,14 @@ a:hover {
   background-color: #3950B6;
 }
 
-/* تخصيص الرسائل */
+/* رسائل الشات */
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
 .message.user {
   background-color: #4A63E7;
   text-align: right;
