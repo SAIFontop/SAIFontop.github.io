@@ -34,7 +34,7 @@ function addMessageToChatBox(sender, message) {
 }
 
 function fetchOpenAIResponse(message) {
-    const apiKey = "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"; // ضع المفتاح الخاص بك هنا
+    const apiKey = "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"; // ضع المفتاح الخاص بك هنا
     const apiUrl = "https://api.openai.com/v1/chat/completions";
 
     fetch(apiUrl, {
