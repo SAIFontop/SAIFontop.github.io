@@ -12,16 +12,6 @@ function openChat(chatId) {
     renderMessages();
 }
 
-function addNewChat() {
-    const newChatId = `chat${Object.keys(chats).length + 1}`;
-    chats[newChatId] = [];
-    const tabButton = document.createElement('button');
-    tabButton.innerText = `دردشة ${Object.keys(chats).length}`;
-    tabButton.onclick = () => openChat(newChatId);
-    document.querySelector('.tabs').appendChild(tabButton);
-    openChat(newChatId);
-}
-
 function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
