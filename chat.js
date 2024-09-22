@@ -1,24 +1,25 @@
-// Chat functionality with OpenAI API integration
-const apiKey = "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";
+// قم بتغيير هذا المفتاح الخاص بـ OpenAI API Key إلى المفتاح الخاص بك
+const apiKey = "sk-1k4aQirG66ZkAgYcdhILkOUsxw902aZCE0vkjcEwauT3BlbkFJtWDAbTzxAHqgyhWAZ9L53PRDLZuzTXUVJfcq-w3Q8A"; 
 
-document.getElementById("sendMessage").addEventListener("click", function() {
-    const userMessage = document.getElementById("userMessage").value;
-    if (userMessage.trim() !== "") {
-        addMessageToChat("user", userMessage);
-        sendMessageToAPI(userMessage);
-        document.getElementById("userMessage").value = "";
-    }
-});
+// الدردشة الحالية
+let currentChat = [];
 
+// دالة لإضافة الرسائل إلى الدردشة
 function addMessageToChat(sender, message) {
-    const chatBox = document.getElementById("chatBox");
+    const chats = document.getElementById("chats");
     const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message", sender);
-    messageDiv.innerText = message;
-    chatBox.appendChild(messageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
+    messageDiv.classList.add("message");
+    if (sender === "user") {
+        messageDiv.classList.add("user-message");
+    } else {
+        messageDiv.classList.add("bot-message");
+    }
+    messageDiv.textContent = message;
+    chats.appendChild(messageDiv);
+    chats.scrollTop = chats.scrollHeight; // قم بالتمرير إلى أسفل الدردشة تلقائيًا
 }
 
+// دالة لإرسال الرسالة إلى OpenAI API
 function sendMessageToAPI(message) {
     const url = "https://api.openai.com/v1/completions";
     const data = {
@@ -31,13 +32,13 @@ function sendMessageToAPI(message) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`
+            "Authorization": `Bearer ${apiKey}` // تأكد من وجود "Bearer" قبل الـ API Key
         },
         body: JSON.stringify(data)
     })
     .then(response => response.json())
     .then(data => {
-        const botMessage = data.choices[0].text.trim();
+        const botMessage = data.choices && data.choices[0] ? data.choices[0].text.trim() : "No response";
         addMessageToChat("bot", botMessage);
     })
     .catch(error => {
@@ -45,3 +46,30 @@ function sendMessageToAPI(message) {
         addMessageToChat("bot", "Error: Unable to get a response from the server.");
     });
 }
+
+// دالة للتعامل مع إدخال المستخدم
+function handleUserMessage() {
+    const userInput = document.getElementById("userInput");
+    const userMessage = userInput.value.trim();
+    if (userMessage === "") return;
+
+    // أضف الرسالة إلى الدردشة
+    addMessageToChat("user", userMessage);
+
+    // أرسل الرسالة إلى OpenAI API
+    sendMessageToAPI(userMessage);
+
+    // مسح حقل الإدخال بعد الإرسال
+    userInput.value = "";
+}
+
+// عند الضغط على زر الإرسال
+document.getElementById("sendButton").addEventListener("click", handleUserMessage);
+
+// عند الضغط على "Enter" في حقل الإدخال
+document.getElementById("userInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        handleUserMessage();
+    }
+});
+
