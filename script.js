@@ -3,7 +3,7 @@ AOS.init();
 
 // إعداد "Client ID" الخاص بك من تطبيق Discord
 const CLIENT_ID = 'YOUR_CLIENT_ID';
-const REDIRECT_URI = 'https://your-website.com/callback'; // استبدلها بعنوان URL الخاص بك
+const REDIRECT_URI = 'https://911bot.org/callback'; // استبدلها بعنوان URL الخاص بك
 
 // وظيفة تسجيل الدخول باستخدام Discord
 function loginWithDiscord() {
