@@ -11,6 +11,26 @@ body {
     line-height: 1.6;
 }
 
+/* شعار متحرك */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.animated-logo {
+    width: 150px;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 .sticky-header {
     position: sticky;
     top: 0;
@@ -103,6 +123,25 @@ nav ul li a:hover {
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* شعار متحرك موزع في الأقسام */
+.logo-distributed {
+    width: 100px;
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .event {
