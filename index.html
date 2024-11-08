@@ -6,38 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>911 Family - مجتمع القوة والتميز</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- الرأس -->
-    <header class="header">
+    <header class="sticky-header">
         <div class="container">
             <h1 class="logo">911 Family</h1>
             <nav>
                 <ul class="main-nav">
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الكوميونتي</a></li>
-                    <li><a href="/login">تسجيل الدخول عبر Discord</a></li>
+                    <li><a href="#team">عن الكوميونتي</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
-    <section id="home" class="hero">
-        <h2>مرحبًا بك في 911 Family</h2>
-        <p>انضم إلينا الآن واكتشف قوة التميز</p>
-        <a href="https://discord.gg/YOUR_DISCORD_LINK" class="btn">انضم إلى Discord</a>
+    <section id="home" class="hero" style="background: url('background.gif') no-repeat center center/cover;">
+        <div class="hero-overlay">
+            <div class="hero-content" data-aos="fade-up">
+                <h2>مرحبًا بك في 911 Family</h2>
+                <p>انضم إلينا الآن واكتشف قوة التميز</p>
+                <a href="https://discord.gg/YOUR_DISCORD_LINK" class="btn">انضم إلى Discord</a>
+            </div>
+        </div>
     </section>
 
-    <!-- قسم عن الكوميونتي -->
-    <section id="about">
-        <h3>عن الكوميونتي</h3>
-        <p>911 Family هو مجتمع متميز يجمع الأعضاء ويمنحهم تجربة فريدة ومثيرة. انضم إلينا واستمتع بالأنشطة والفعاليات الرائعة التي نقدمها.</p>
-    </section>
-
-    <!-- التذييل -->
     <footer>
         <p>© 2024 911 Family. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
