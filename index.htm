@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>911 Family - مجتمع القوة والتميز</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="sticky-header">
         <div class="container">
             <h1 class="logo">911 Family</h1>
             <nav>
@@ -24,7 +26,7 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-down">
             <h2>مرحبًا بك في 911 Family</h2>
             <p>انضم إلينا الآن واكتشف قوة التميز</p>
             <a href="https://discord.gg/YOUR_DISCORD_LINK" class="btn">انضم إلى Discord</a>
@@ -32,12 +34,12 @@
     </section>
 
     <main>
-        <section id="about" class="content-section">
+        <section id="about" class="content-section" data-aos="fade-up">
             <h2>من نحن</h2>
             <p>911 Family هو مجتمع متكامل يجمع بين الأنشطة المميزة والتحديات الرائعة لأعضائنا.</p>
         </section>
 
-        <section id="events" class="content-section">
+        <section id="events" class="content-section" data-aos="fade-up">
             <h2>الأحداث القادمة</h2>
             <div class="event">
                 <h3>حدث خاص: تحدي القيادة</h3>
@@ -46,12 +48,12 @@
             </div>
         </section>
 
-        <section id="store" class="content-section">
+        <section id="store" class="content-section" data-aos="fade-up">
             <h2>المتجر</h2>
             <p>اكتشف منتجات حصرية لأعضاء 911 Family.</p>
         </section>
 
-        <section id="contact" class="content-section">
+        <section id="contact" class="content-section" data-aos="fade-up">
             <h2>اتصل بنا</h2>
             <form>
                 <input type="text" placeholder="اسمك" required>
@@ -65,5 +67,10 @@
     <footer>
         <p>© 2024 911 Family. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
