@@ -1,92 +1,67 @@
-/* إعدادات أساسية */
+/* إعدادات أساسية للجسم */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #101010;
     color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
-.sticky-header {
-    position: sticky;
-    top: 0;
+/* تنسيق للرأس */
+.header {
     background-color: #181818;
-    z-index: 1000;
-    padding: 15px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
 }
 
 .logo {
-    font-size: 2.8rem;
-    color: #00ff99;
+    font-size: 2rem;
     font-weight: bold;
+}
+
+/* تنسيق القائمة */
+nav {
+    margin-top: 10px;
 }
 
 .main-nav {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 30px;
+    padding: 0;
 }
 
-.main-nav li {
-    position: relative;
-}
-
-.main-nav a {
+.main-nav li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
 
-.main-nav a:hover {
+.main-nav li a:hover {
     color: #00ff99;
 }
 
+/* تنسيق القسم الرئيسي */
 .hero {
-    height: 90vh;
-    position: relative;
-    color: #ffffff;
-    padding: 0;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-content {
-    max-width: 800px;
     text-align: center;
+    padding: 100px 20px;
+    background-color: #202020;
 }
 
 .hero h2 {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
     color: #00ff99;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
+/* تنسيق الزر */
 .btn {
     background-color: #00ff99;
     color: #101010;
@@ -101,10 +76,46 @@ body {
     background-color: #00cc7a;
 }
 
+/* تنسيق للقسم التعريفي */
+#about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #151515;
+    color: #e0e0e0;
+}
+
+#about h3 {
+    font-size: 2.5rem;
+    color: #00ff99;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* تنسيق التذييل */
 footer {
     background-color: #181818;
     text-align: center;
     padding: 15px 0;
     color: #777;
     font-size: 0.9rem;
+}
+
+/* إعدادات استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
 }
