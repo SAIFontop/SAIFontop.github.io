@@ -1,43 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* إعدادات أساسية */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1f1f1f, #121212);
-    color: #f4f4f4;
-    line-height: 1.6;
-}
-
-/* شعار متحرك */
-.logo-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.animated-logo {
-    width: 150px;
-    animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    background-color: #101010;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 .sticky-header {
     position: sticky;
     top: 0;
-    background-color: #1a1a1a;
+    background-color: #181818;
     z-index: 1000;
     padding: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -50,49 +26,60 @@ body {
 }
 
 .logo {
-    font-size: 2.5rem;
-    color: #ff4757;
+    font-size: 2.8rem;
+    color: #00ff99;
     font-weight: bold;
 }
 
-nav ul {
+.main-nav {
     list-style: none;
     display: flex;
     gap: 30px;
 }
 
-nav ul li a {
-    color: #fff;
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ff4757;
+.main-nav a:hover {
+    color: #00ff99;
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    height: 80vh;
+    height: 90vh;
+    position: relative;
+    color: #ffffff;
+    padding: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #fff;
 }
 
 .hero-content {
-    max-width: 600px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
 }
 
 .hero h2 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 20px;
+    color: #00ff99;
 }
 
 .hero p {
@@ -101,60 +88,21 @@ nav ul li a:hover {
 }
 
 .btn {
-    background-color: #ff4757;
-    color: #fff;
+    background-color: #00ff99;
+    color: #101010;
     padding: 12px 25px;
-    text-decoration: none;
     border-radius: 5px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #ff6b81;
-    transform: translateY(-3px);
-}
-
-.content-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-/* شعار متحرك موزع في الأقسام */
-.logo-distributed {
-    width: 100px;
-    position: absolute;
-    top: -50px;
-    right: 20px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.event {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #00cc7a;
 }
 
 footer {
-    background-color: #1a1a1a;
+    background-color: #181818;
     text-align: center;
     padding: 15px 0;
     color: #777;
