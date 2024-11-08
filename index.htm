@@ -4,40 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الشخصي</title>
+    <title>911 Family - الكوميونتي الأقوى</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>أهلاً بكم في موقعي</h1>
+        <div class="logo">
+            <h1>911 Family</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
+                <li><a href="#about">عن الكوميونتي</a></li>
+                <li><a href="#events">الأنشطة</a></li>
+                <li><a href="#store">المتجر</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>الرئيسية</h2>
-            <p>مرحبًا بكم في موقعي الرائع!</p>
+        <section id="home" class="hero">
+            <h2>مرحبًا بك في 911 Family</h2>
+            <p>انضم إلينا الآن واكتشف قوة الكوميونتي</p>
+            <a href="https://discord.gg/YOUR_DISCORD_LINK" class="btn">انضم إلى Discord</a>
         </section>
 
         <section id="about">
             <h2>من نحن</h2>
-            <p>هذه الصفحة تحتوي على معلومات عن الموقع.</p>
+            <p>911 Family هو الكوميونتي الأقوى الذي يجمع بين الترفيه، الأنشطة، والتحديات المميزة.</p>
+        </section>
+
+        <section id="events">
+            <h2>الأحداث القادمة</h2>
+            <div class="event">
+                <h3>حدث خاص: تحدي القيادة</h3>
+                <p>تاريخ الحدث: 25 ديسمبر 2024</p>
+                <a href="#" class="btn">المزيد من التفاصيل</a>
+            </div>
+        </section>
+
+        <section id="store">
+            <h2>المتجر</h2>
+            <p>منتجات حصرية لأعضاء 911 Family.</p>
+            <!-- يمكن إضافة منتجات هنا -->
         </section>
 
         <section id="contact">
             <h2>اتصل بنا</h2>
-            <p>يمكنك التواصل معنا عبر البريد الإلكتروني.</p>
+            <form>
+                <input type="text" placeholder="اسمك" required>
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <textarea placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 جميع الحقوق محفوظة.</p>
+        <p>© 2024 911 Family. جميع الحقوق محفوظة.</p>
     </footer>
 </body>
 </html>
