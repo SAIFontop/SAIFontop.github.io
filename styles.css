@@ -5,52 +5,51 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #181818;
-    color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
     line-height: 1.6;
-    margin: 0;
 }
 
 header {
-    background-color: #222;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
+    background-color: #1a1a1a;
+    padding: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo h1 {
-    font-size: 3rem;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2.5rem;
     color: #ff4757;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 30px;
-    margin-top: 10px;
 }
 
 nav ul li a {
-    color: #f4f4f4;
+    color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 5px 10px;
-    transition: color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #ff4757;
-    transform: scale(1.1);
-}
-
-main {
-    padding: 40px 20px;
-    text-align: center;
 }
 
 .hero {
@@ -61,19 +60,24 @@ main {
     align-items: center;
     text-align: center;
     color: #fff;
-    flex-direction: column;
-    gap: 20px;
-    background-blend-mode: overlay;
+}
+
+.hero-content {
+    max-width: 600px;
+    backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h2 {
     font-size: 3.5rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -82,7 +86,6 @@ main {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2rem;
     transition: background-color 0.3s;
     box-shadow: 0 3px 10px rgba(255, 71, 87, 0.3);
 }
@@ -91,24 +94,24 @@ main {
     background-color: #ff6b81;
 }
 
-section {
-    margin-top: 40px;
+.content-section {
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .event {
-    margin: 20px auto;
-    background-color: #292929;
+    background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    margin: 20px auto;
     max-width: 600px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer {
-    background-color: #222;
-    padding: 15px 0;
+    background-color: #1a1a1a;
     text-align: center;
+    padding: 15px 0;
     color: #777;
     font-size: 0.9rem;
 }
