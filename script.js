@@ -4,7 +4,6 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // بيانات تسجيل الدخول
     if (username === "admin" && password === "12345") {
         window.location.href = "admin.html";
     } else {
