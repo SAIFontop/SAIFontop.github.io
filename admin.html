@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قسم المسؤول - 911 Family</title>
+    <title>لوحة تحكم المسؤول - 911 Family</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
-    <header class="header">
-        <div class="logo">911 Family - قسم المسؤول</div>
-        <button class="admin-button" onclick="toggleAdminOptions()">خيارات المسؤول</button>
+    <header class="main-header">
+        <h1>لوحة تحكم المسؤول</h1>
+        <button onclick="logout()">تسجيل الخروج</button>
     </header>
-    <div id="admin-options" class="admin-options" style="display: none;">
-        <button onclick="addPartner()">إضافة شريك</button>
-        <button onclick="managePartners()">إدارة الشركاء</button>
-        <!-- أضف المزيد من الخيارات هنا -->
-    </div>
     <main class="admin-section">
-        <h2>مرحبًا بك في قسم المسؤول</h2>
-        <p>اختر خيارًا من القائمة أعلاه لإدارة الموقع.</p>
+        <div class="admin-option">
+            <h2>إضافة شريك جديد</h2>
+            <form id="partner-form">
+                <input type="text" id="partner-name" placeholder="اسم الشريك" required>
+                <input type="url" id="partner-link" placeholder="رابط ديسكورد الشريك" required>
+                <input type="text" id="partner-image" placeholder="رابط الصورة (GIF أو عادية)" required>
+                <button type="submit">إضافة الشريك</button>
+            </form>
+        </div>
+        <div class="partners-list">
+            <h2>الشركاء</h2>
+            <div id="partners-container"></div>
+        </div>
     </main>
-    <script src="script.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
