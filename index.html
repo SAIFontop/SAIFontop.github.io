@@ -7,36 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-animation"></div>
     <header class="main-header">
-        <div class="logo">911 Family</div>
-        <nav class="nav-bar">
-            <a href="#about">عن المجتمع</a>
-            <a href="#partners">شركاؤنا</a>
-            <a href="#contact">اتصل بنا</a>
-            <button class="login-button" onclick="goToLogin()">تسجيل الدخول</button>
-        </nav>
+        <div class="container">
+            <div class="logo">911 Family</div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن المجتمع</a></li>
+                    <li><a href="#partners">شركاؤنا</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <button class="login-button" onclick="goToLogin()">تسجيل الدخول</button>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section class="hero-section">
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
             <h1>مرحبًا بك في مجتمع 911 Family</h1>
-            <p>استمتع بتجربة ألعاب وتواصل لا مثيل لها.</p>
-        </section>
-        <section id="about" class="about-section">
+            <p>نحن مجتمع يضم عشاق الألعاب والتواصل الاجتماعي، نسعى لتقديم تجربة لا مثيل لها.</p>
+            <button class="cta-button">انضم إلينا الآن</button>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
             <h2>عن المجتمع</h2>
-            <p>نحن مجتمع يضم عشاق الألعاب الإلكترونية، نوفر بيئة آمنة وممتعة للتفاعل والتواصل.</p>
-        </section>
-        <section id="partners" class="partners-section">
+            <p>نحن مجتمع يجمع بين اللاعبين ومحبي الألعاب الإلكترونية، نوفر بيئة آمنة وممتعة للتفاعل والتواصل.</p>
+        </div>
+    </section>
+
+    <section id="partners" class="partners-section">
+        <div class="container">
             <h2>شركاؤنا</h2>
-            <div id="partners-container"></div>
-        </section>
-    </main>
+            <div id="partners-container" class="partners-grid"></div>
+        </div>
+    </section>
+
     <footer class="main-footer">
-        <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
+        <div class="container">
+            <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
+        </div>
     </footer>
+
     <script>
         function goToLogin() {
-            window.location.href = "login.html"; // تأكد من أن هذا الرابط صحيح وأن ملف login.html موجود
+            window.location.href = "login.html"; // تأكد من أن الرابط صحيح
         }
     </script>
 </body>
