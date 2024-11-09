@@ -38,7 +38,7 @@ function showAddPartnerForm() {
 }
 
 function logout() {
-    window.location.href = "login.html";
+    window.location.href = "login.html"; // تأكد من أن الرابط صحيح
 }
 
 window.onload = displayPartners;
