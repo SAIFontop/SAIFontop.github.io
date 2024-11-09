@@ -13,7 +13,8 @@
         <button onclick="logout()">تسجيل الخروج</button>
     </header>
     <main class="admin-section">
-        <div class="admin-option">
+        <button class="admin-option" onclick="showAddPartnerForm()">إضافة شريك</button>
+        <div id="add-partner-form" style="display: none;">
             <h2>إضافة شريك جديد</h2>
             <form id="partner-form">
                 <input type="text" id="partner-name" placeholder="اسم الشريك" required>
