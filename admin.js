@@ -22,23 +22,4 @@ function displayPartners() {
 
     let partners = JSON.parse(localStorage.getItem("partners")) || [];
     partners.forEach(partner => {
-        const partnerCard = document.createElement("div");
-        partnerCard.classList.add("partner-card");
-        partnerCard.innerHTML = `
-            <img src="${partner.image}" alt="${partner.name}">
-            <p>${partner.name}</p>
-            <a href="${partner.link}" target="_blank">انضم إلى ديسكورد</a>
-        `;
-        partnersContainer.appendChild(partnerCard);
-    });
-}
-
-function showAddPartnerForm() {
-    document.getElementById("add-partner-form").style.display = "block";
-}
-
-function logout() {
-    window.location.href = "login.html";
-}
-
-window.onload = displayPartners;
+        const partnerCard = document.createElement("
