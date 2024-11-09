@@ -2,41 +2,41 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911 Family - مجتمع القوة والتميز</title>
+    <title>911 Family</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="sticky-header">
-        <div class="container">
-            <h1 class="logo">911 Family</h1>
-            <nav>
-                <ul class="main-nav">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#team">عن الكوميونتي</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="background-animation"></div>
+    <header class="header">
+        <div class="logo">911 Family</div>
     </header>
+    <main>
+        <section id="login-section">
+            <h2>تسجيل الدخول كمسؤول</h2>
+            <form id="admin-login-form">
+                <input type="text" id="username" placeholder="اسم المستخدم" required>
+                <input type="password" id="password" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+            <p id="login-error" class="error-message"></p>
+        </section>
 
-    <section id="home" class="hero" style="background: url('background.gif') no-repeat center center/cover;">
-        <div class="hero-overlay">
-            <div class="hero-content" data-aos="fade-up">
-                <h2>مرحبًا بك في 911 Family</h2>
-                <p>انضم إلينا الآن واكتشف قوة التميز</p>
-                <a href="https://discord.gg/YOUR_DISCORD_LINK" class="btn">انضم إلى Discord</a>
+        <section id="admin-section" style="display: none;">
+            <h2>قسم المسؤول</h2>
+            <p>مرحبًا بك، لديك الآن وصول كمسؤول.</p>
+            <!-- يمكنك إضافة المزيد من ميزات المسؤول هنا -->
+        </section>
+
+        <section class="partner-section">
+            <h2>شركاؤنا</h2>
+            <div class="partner-card">
+                <img src="partner-logo.png" alt="لوقو الشريك" class="partner-logo">
+                <p class="partner-name">اسم الشريك</p>
+                <a href="https://discord.com/invite/partner-link" class="join-discord" target="_blank">انضم إلى ديسكورد</a>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 911 Family. جميع الحقوق محفوظة.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

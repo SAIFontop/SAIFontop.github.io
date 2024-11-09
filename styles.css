@@ -1,110 +1,48 @@
-/* إعدادات أساسية */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #101010;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-.sticky-header {
-    position: sticky;
-    top: 0;
-    background-color: #181818;
-    z-index: 1000;
-    padding: 15px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 2.8rem;
-    color: #00ff99;
-    font-weight: bold;
-}
-
-.main-nav {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.main-nav li {
-    position: relative;
-}
-
-.main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: #00ff99;
-}
-
-.hero {
-    height: 90vh;
-    position: relative;
-    color: #ffffff;
-    padding: 0;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-content {
-    max-width: 800px;
+#login-section {
     text-align: center;
+    margin-top: 50px;
 }
 
-.hero h2 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #00ff99;
+#admin-login-form {
+    display: inline-block;
+    text-align: left;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-
-.btn {
-    background-color: #00ff99;
-    color: #101010;
-    padding: 12px 25px;
+#admin-login-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
-    font-size: 1.2rem;
-    text-decoration: none;
+    border: none;
+}
+
+#admin-login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7289da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: #00cc7a;
+#admin-login-form button:hover {
+    background-color: #5b6ebf;
 }
 
-footer {
-    background-color: #181818;
+#admin-section {
     text-align: center;
-    padding: 15px 0;
-    color: #777;
-    font-size: 0.9rem;
+    margin-top: 50px;
 }
