@@ -3,20 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - 911 Family</title>
+    <title>911 Family - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
-    <div class="login-container">
-        <h2>تسجيل الدخول</h2>
-        <form id="login-form">
-            <input type="text" id="username" placeholder="اسم المستخدم" required>
-            <input type="password" id="password" placeholder="كلمة المرور" required>
-            <button type="submit">تسجيل الدخول</button>
-        </form>
-        <p id="error-message" class="error-message"></p>
-    </div>
-    <script src="script.js"></script>
+    <header class="main-header">
+        <h1>911 Family</h1>
+        <nav class="nav-bar">
+            <a href="#about">عن المجتمع</a>
+            <a href="#partners">شركاؤنا</a>
+            <a href="#contact">اتصل بنا</a>
+            <button class="login-button" onclick="goToLogin()">تسجيل الدخول</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h1>مرحبًا بك في مجتمع 911 Family</h1>
+            <p>استمتع بتجربة ألعاب وتواصل لا مثيل لها.</p>
+        </section>
+        <section id="about" class="about-section">
+            <h2>عن المجتمع</h2>
+            <p>نحن مجتمع يضم عشاق الألعاب الإلكترونية، نوفر بيئة آمنة وممتعة للتفاعل والتواصل.</p>
+        </section>
+        <section id="partners" class="partners-section">
+            <h2>شركاؤنا</h2>
+            <div id="partners-container"></div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
+    </footer>
+    <script>
+        function goToLogin() {
+            window.location.href = "login.html";
+        }
+    </script>
 </body>
 </html>
