@@ -1,13 +1,28 @@
-// تفعيل الرسوم المتحركة عند التمرير
-AOS.init();
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-// إعداد "Client ID" الخاص بك من تطبيق Discord
-const CLIENT_ID = '1304436734117019680';
-const REDIRECT_URI = 'https://911bot.org/callback'; // استبدلها بعنوان URL الخاص بك
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-// وظيفة تسجيل الدخول باستخدام Discord
-function loginWithDiscord() {
-    const discordAuthURL = `https://discord.com/oauth2/authorize?client_id=1304436734117019680&redirect_uri=https%3A%2F%2F911bot.org%2Fcallback&response_type=code&scope=identify
-`;
-    window.location.href = discordAuthURL;
+    const validUsername = "admin";
+    const validPassword = "12345";
+
+    if (username === validUsername && password === validPassword) {
+        window.location.href = "admin.html";
+    } else {
+        document.getElementById("error-message").textContent = "اسم المستخدم أو كلمة المرور غير صحيحة.";
+    }
+});
+
+function toggleAdminOptions() {
+    const options = document.getElementById("admin-options");
+    options.style.display = options.style.display === "none" ? "block" : "none";
+}
+
+function addPartner() {
+    alert("ميزة إضافة شريك قيد التطوير.");
+}
+
+function managePartners() {
+    alert("ميزة إدارة الشركاء قيد التطوير.");
 }
