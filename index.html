@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - 911 Family</title>
+    <title>911 Family - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
-    <div class="login-container">
-        <h2>تسجيل الدخول</h2>
-        <form id="login-form">
-            <input type="text" id="username" placeholder="اسم المستخدم" required>
-            <input type="password" id="password" placeholder="كلمة المرور" required>
-            <button type="submit">تسجيل الدخول</button>
-        </form>
-        <p id="error-message" class="error-message"></p>
-    </div>
+    <header class="main-header">
+        <div class="logo">911 Family</div>
+        <nav class="nav-bar">
+            <a href="#about">عن المجتمع</a>
+            <a href="#partners">شركاؤنا</a>
+            <a href="#admin-options">خيارات المسؤول</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h1>مرحبًا بك في مجتمع 911 Family</h1>
+            <p>مجتمعنا هو مكان يجمع عشاق الألعاب والتواصل الاجتماعي.</p>
+            <button class="cta-button">انضم إلينا الآن</button>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>عن المجتمع</h2>
+            <p>نحن مجتمع يجمع بين اللاعبين ومحبي الألعاب الإلكترونية، حيث نقدم الدعم والتفاعل والمزيد.</p>
+        </section>
+
+        <section id="partners" class="partners-section">
+            <h2>شركاؤنا</h2>
+            <div class="partner-card">
+                <img src="partner-logo.png" alt="لوقو الشريك" class="partner-logo">
+                <p class="partner-name">اسم الشريك</p>
+                <a href="https://discord.com/invite/partner-link" class="join-discord" target="_blank">انضم إلى ديسكورد</a>
+            </div>
+            <!-- أضف المزيد من الشركاء هنا -->
+        </section>
+
+        <section id="admin-options" class="admin-section">
+            <h2>خيارات المسؤول</h2>
+            <button onclick="addPartner()">إضافة شريك</button>
+            <button onclick="managePartners()">إدارة الشركاء</button>
+            <!-- أضف المزيد من الخيارات هنا -->
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
