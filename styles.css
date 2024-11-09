@@ -1,4 +1,3 @@
-/* تحسين تنسيقات CSS */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,6 @@ body {
     background-color: #111;
     color: #fff;
     overflow-x: hidden;
-    position: relative;
 }
 
 .background-animation {
@@ -30,6 +28,12 @@ body {
     align-items: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .nav-bar {
@@ -51,6 +55,11 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #d40049;
 }
 
 .hero-section {
@@ -66,6 +75,11 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-option:hover {
+    background-color: #d40049;
 }
 
 #add-partner-form {
