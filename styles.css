@@ -1,3 +1,4 @@
+/* جميع تنسيقات CSS المحسنة */
 * {
     margin: 0;
     padding: 0;
@@ -23,64 +24,51 @@ body {
     z-index: -1;
 }
 
-.login-container, .admin-section {
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    margin: 100px auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none;
-    font-size: 1rem;
-}
-
-button {
-    background-color: #ff0057;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #d40049;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-}
-
-.partners-list {
-    margin-top: 30px;
-}
-
-.partner-card {
-    background-color: rgba(255, 255, 255, 0.1);
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.partner-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.partner-card a {
-    color: #7289da;
+.nav-bar a, .login-button {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.login-button {
+    background-color: #ff0057;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.admin-option {
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #ff0057;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-partner-form {
+    margin-top: 20px;
+    text-align: center;
 }
