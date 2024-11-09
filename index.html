@@ -3,40 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911 Family</title>
+    <title>تسجيل الدخول - 911 Family</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
-    <header class="header">
-        <div class="logo">911 Family</div>
-    </header>
-    <main>
-        <section id="login-section">
-            <h2>تسجيل الدخول كمسؤول</h2>
-            <form id="admin-login-form">
-                <input type="text" id="username" placeholder="اسم المستخدم" required>
-                <input type="password" id="password" placeholder="كلمة المرور" required>
-                <button type="submit">تسجيل الدخول</button>
-            </form>
-            <p id="login-error" class="error-message"></p>
-        </section>
-
-        <section id="admin-section" style="display: none;">
-            <h2>قسم المسؤول</h2>
-            <p>مرحبًا بك، لديك الآن وصول كمسؤول.</p>
-            <!-- يمكنك إضافة المزيد من ميزات المسؤول هنا -->
-        </section>
-
-        <section class="partner-section">
-            <h2>شركاؤنا</h2>
-            <div class="partner-card">
-                <img src="partner-logo.png" alt="لوقو الشريك" class="partner-logo">
-                <p class="partner-name">اسم الشريك</p>
-                <a href="https://discord.com/invite/partner-link" class="join-discord" target="_blank">انضم إلى ديسكورد</a>
-            </div>
-        </section>
-    </main>
+    <div class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="اسم المستخدم" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <p id="error-message" class="error-message"></p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
