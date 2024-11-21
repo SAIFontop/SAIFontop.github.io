@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchMembersCount() {
         try {
-            const response = await fetch("https://discord.com/api/guilds/YOUR_GUILD_ID/widget.json");
+            const response = await fetch("https://discord.com/api/guilds/1088100548160528404/widget.json");
             const data = await response.json();
             membersCount.textContent = `${data.presence_count} عضو متصل`;
         } catch (error) {
