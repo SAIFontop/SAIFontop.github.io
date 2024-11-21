@@ -1,12 +1,16 @@
-document.getElementById("login-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+// Fetch Discord Members Count
+const membersCountElement = document.getElementById('members-count');
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username === "admin" && password === "12345") {
-        window.location.href = "admin.html";
-    } else {
-        document.getElementById("error-message").textContent = "اسم المستخدم أو كلمة المرور غير صحيحة.";
+async function fetchDiscordMembers() {
+    try {
+        // Replace with your Discord API endpoint
+        const response = await fetch('https://api.discord.com/example-endpoint');
+        const data = await response.json();
+        membersCountElement.textContent = `${data.members} عضو`;
+    } catch (error) {
+        console.error('Error fetching members count:', error);
+        membersCountElement.textContent = 'غير متوفر حالياً';
     }
-});
+}
+
+fetchDiscordMembers();
