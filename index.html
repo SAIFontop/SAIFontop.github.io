@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911 Family - الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>911 Family</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">911 Family</div>
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن المجتمع</a></li>
-                    <li><a href="#partners">شركاؤنا</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
-                </ul>
-                <button class="login-button" onclick="goToLogin()">تسجيل الدخول</button>
-            </nav>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="911 Family Logo">
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عنّا</a></li>
+                <li><a href="partners.html">شركاؤنا</a></li>
+                <li><a href="events.html">الفعاليات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
     </header>
-
     <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>مرحبًا بك في مجتمع 911 Family</h1>
-                <p>نحن مجتمع يضم عشاق الألعاب والتواصل الاجتماعي، نسعى لتقديم تجربة لا مثيل لها.</p>
-                <button class="cta-button">انضم إلينا الآن</button>
+        <section class="hero">
+            <h1>مرحباً بكم في مجتمع 911 Family</h1>
+            <p>انضم إلينا وكن جزءاً من التجربة المميزة!</p>
+            <a href="https://discord.com" class="btn">انضم الآن</a>
+        </section>
+        <section class="stats">
+            <div class="stat">
+                <h2>عدد الأعضاء</h2>
+                <p id="members-count">Loading...</p>
+            </div>
+            <div class="stat">
+                <h2>عدد الفعاليات</h2>
+                <p>5 فعاليات نشطة</p>
             </div>
         </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>عن المجتمع</h2>
-                <p>نحن مجتمع يجمع بين اللاعبين ومحبي الألعاب الإلكترونية، نوفر بيئة آمنة وممتعة للتفاعل والتواصل.</p>
-            </div>
-        </section>
-
-        <section id="partners" class="partners-section">
-            <div class="container">
-                <h2>شركاؤنا</h2>
-                <div id="partners-container" class="partners-grid"></div>
-            </div>
-        </section>
-
-        <footer class="main-footer">
-            <div class="container">
-                <p>&copy; 2024 911 Family. جميع الحقوق محفوظة.</p>
-            </div>
-        </footer>
     </main>
-
-    <script>
-        function goToLogin() {
-            window.location.href = "login.html"; // تأكد من أن الرابط صحيح
-        }
-    </script>
+    <footer>
+        <p>جميع الحقوق محفوظة © 911 Family</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
